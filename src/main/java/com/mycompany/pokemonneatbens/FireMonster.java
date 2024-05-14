@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.pokemonneatbens;
-
 import java.util.Random;
-
+import com.mycompany.pokemonneatbens.Monster;
 /**
  *
  * @author aditya wirz
@@ -72,4 +71,3 @@ class FireMonster extends Monster {
         }
     }
 }
-
