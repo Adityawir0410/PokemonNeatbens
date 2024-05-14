@@ -11,6 +11,7 @@ package com.mycompany.pokemonneatbens;
 import java.io.*;
 import java.util.*;
 
+//ubah baru
 // Interface untuk aksi monster
 interface MonsterAction {
     void basicAttack(Monster target);
