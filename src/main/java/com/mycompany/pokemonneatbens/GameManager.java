@@ -5,16 +5,36 @@ import java.util.*;
 
 public class GameManager {
     private List<Monster> playerMonsters;
-    private List<Monster> wildMonsters;
+    private List<WaterMonsterCollection> WaterWildMonsters;
+    private List<WindMonsterCollection> WindWildMonsters;
+    private List<FireMonster> FireWildMonsters;
+    private List<IceMonster> IceWildMonsters;
+    private List<EarthMonster> EarthWildMonsters;
 
     // Getter untuk wildMonsters
-    public List<Monster> getWildMonsters() {
-        return wildMonsters;
+    public List<WindMonsterCollection> getWindMonsters() {
+        return WindWildMonsters;
+    }
+    public List<WaterMonsterCollection> getWaterMonsters() {
+        return WaterWildMonsters;
+    }
+    public List<FireMonsterCollection> getFireMonsters() {
+        return FireWildMonsters;
+    }
+    public List<IceMonsterCollection> getIceMonsters() {
+        return IceWildMonsters;
+    }
+    public List<EarthMonsterCollection> getEarthMonsters() {
+        return EarthWildMonsters;
     }
 
     public GameManager() {
         playerMonsters = new ArrayList<>();
-        wildMonsters = new ArrayList<>();
+        WaterWildMonsters = new ArrayList<>();
+        WindWildMonsters = new ArrayList<>();
+        FireWildMonsters = new ArrayList<>();
+        IceWildMonsters = new ArrayList<>();
+        EarthWildMonsters = new ArrayList<>();
     }
 
     // Metode untuk menambahkan monster pemain
@@ -28,21 +48,49 @@ public class GameManager {
         int numMonsters = 1; // Jumlah monster liar antara 1 hingga 5
 
         for (int i = 0; i < numMonsters; i++) {
-            int type = random.nextInt(2); // Jenis monster (0 = api, 1 = angin)
+            int type = random.nextInt(5);
+            switch (type) {
+                case 0:
+                    WindMonsterCollection monster = new WindMonsterCollection();
+                    monster.getMonster(random.nextInt(2));
+                    WindWildMonsters.add(monster);
+                    break;
+                case 1:
+                    WaterMonsterCollection monster = new WaterMonsterCollection();
+                    monster.getMonster(random.nextInt(2));
+                    WaterWildMonsters.add(monster);
+                    break;
+                case 2:
+                    WindMonsterCollection monster = new WindMonsterCollection();
+                    monster.getMonster(random.nextInt(2));
+                    WindWildMonsters.add(monster);
+                    break;
+                case 3:
+                    WindMonsterCollection monster = new WindMonsterCollection();
+                    monster.getMonster(random.nextInt(2));
+                    WindWildMonsters.add(monster);
+                    break;
+                case 4:
+                    WindMonsterCollection monster = new WindMonsterCollection();
+                    monster.getMonster(random.nextInt(2));
+                    WindWildMonsters.add(monster);
+                    break;
+            
+                default:
+                    break;
+            }
+            if (type == 0) {
+            } else {
+                monster = new WindMonster(name, level, maxHp, hp, ep);
+            }
+
             String name = "Wild Monster " + (i + 1);
             int level = random.nextInt(20) + 1; // Level monster liar antara 1 hingga 20
             int maxHp = level * 50; // Max HP berdasarkan level
             int hp = maxHp;
             int ep = 0;
 
-            Monster monster;
-            if (type == 0) {
-                monster = new FireMonster(name, level, maxHp, hp, ep);
-            } else {
-                monster = new WindMonster(name, level, maxHp, hp, ep);
-            }
 
-            wildMonsters.add(monster);
         }
     }
 
