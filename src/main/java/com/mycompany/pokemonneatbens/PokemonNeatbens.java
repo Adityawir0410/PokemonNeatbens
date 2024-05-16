@@ -24,12 +24,6 @@ enum Element {
 // Class untuk item
 
 
-// Enum untuk tipe item
-enum ItemType {
-    HEALTH_POTION,
-    ELEMENTAL_POTION,
-    OTHER
-}
 
 // Class Exception buatan sendiri
 class InvalidEvolutionException extends Exception {

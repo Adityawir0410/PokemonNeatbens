@@ -2,11 +2,16 @@ package com.mycompany.pokemonneatbens;
 
 public class Item {
     private String name;
-    private ItemType type;
+    private double effect;
+    private int kuantitas;
+    private double price;
 
-    public Item(String name, ItemType type) {
+
+    public Item(String name, double effect, int kuantitas, double price) {
         this.name = name;
-        this.type = type;
+        this.effect = effect;
+        this.kuantitas = kuantitas;
+        this.price = price;
     }
 
     // Getter dan setter
@@ -14,7 +19,15 @@ public class Item {
         return name;
     }
 
-    public ItemType getType() {
-        return type;
+    public double getEffect() {
+        return effect;
+    }
+
+    public int getKuantitas(){
+        return kuantitas;
+    }
+
+    public double getPrice(){
+        return price;
     }
 }
