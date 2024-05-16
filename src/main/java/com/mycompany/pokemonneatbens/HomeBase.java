@@ -15,7 +15,7 @@ public class HomeBase extends Dunia{
     
     @Override
     public HomeBase GoToHomeBase() {
-        System.out.println("You are in homebase!");
+        throw new Exception("Sudah berada di Home Base")
     }
 
     @Override
