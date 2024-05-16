@@ -1,4 +1,7 @@
+package com.mycompany.pokemonneatbens;
 
-public class Dunia {
-    
+
+public abstract class Dunia {
+    public abstract HomeBase GoToHomeBase();
+    public abstract void GoDungeon();
 }

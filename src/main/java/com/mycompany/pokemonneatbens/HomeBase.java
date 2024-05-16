@@ -10,7 +10,7 @@ package com.mycompany.pokemonneatbens;
  */
 public class HomeBase extends Dunia{
     boolean changeElm;
-    Monster monsterChest = new Monster[15];
+    Monster monsterChest[] = new Monster[15];
     Item shop[] = new Item[5];
     
     @Override
