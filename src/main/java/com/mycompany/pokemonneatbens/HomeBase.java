@@ -9,18 +9,20 @@ package com.mycompany.pokemonneatbens;
  * @author piosg
  */
 public class HomeBase extends Dunia{
-    boolean changeElm;
-    Monster monsterChest[] = new Monster[15];
     Item shop[] = new Item[5];
+    
+    public HomeBase(Monster monsterChest[]){
+        super(monsterChest);
+    }
     
     @Override
     public HomeBase GoToHomeBase() {
-        throw new Exception("Sudah berada di Home Base")
+        throw new UnsupportedOperationException("Sudah berada di Home Base");
     }
 
     @Override
-    public void GoDungeon() {
-        
+    public Dungeon GoDungeon() {
+        return new Dungeon(super.monsterChest);
     }
 
     public void levelUpMonster() {

@@ -10,13 +10,17 @@ package com.mycompany.pokemonneatbens;
  */
 public class Dungeon extends Dunia{
 
-    @Override
-    public HomeBase GoToHomeBase() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Dungeon(Monster[] monsterChest) {
+        super(monsterChest);
+    }
 
     @Override
-    public void GoDungeon() {
-        throw new Exception("Kamu berada di Dungeon"); 
+    public HomeBase GoToHomeBase() {
+        return new HomeBase(super.monsterChest);
+    }
+    @Override
+    public Dungeon GoDungeon() {
+        throw new UnsupportedOperationException("Kamu berada di Dungeon"); 
     }
     
 }
