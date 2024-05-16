@@ -70,11 +70,11 @@ public class PokemonNeatbens {
                     gameManager.generateWildMonsters();
                     if (gameManager.getWindMonster() != null) {
                         
-                    }else if (gameRunning) {
+                    }else if (gameManager.getWaterMonster() != null) {
                         
-                    }else if (gameRunning) {
+                    }else if (gameManager.getFireMonster() != null) {
                         
-                    }else if (gameRunning) {
+                    }else if (gameManager.getIceMonster() != null) {
                         
                     }else{
                         
