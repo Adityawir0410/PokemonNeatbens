@@ -25,7 +25,7 @@ public class GameManager {
     // Metode untuk menghasilkan monster liar secara acak
     public void generateWildMonsters() {
         Random random = new Random();
-        int numMonsters = random.nextInt(5) + 1; // Jumlah monster liar antara 1 hingga 5
+        int numMonsters = 1; // Jumlah monster liar antara 1 hingga 5
 
         for (int i = 0; i < numMonsters; i++) {
             int type = random.nextInt(2); // Jenis monster (0 = api, 1 = angin)
