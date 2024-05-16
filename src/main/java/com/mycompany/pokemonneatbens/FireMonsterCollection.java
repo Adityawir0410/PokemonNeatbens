@@ -4,11 +4,11 @@ package com.mycompany.pokemonneatbens;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FireMonsterCollection extends FireMonster{
+public class FireMonsterCollection{
     List<FireMonster> list;
-    public FireMonsterCollection(String name, int level, int maxHp, int hp, int ep){
-        super(name, level, maxHp, hp, ep);
-        
+    public FireMonsterCollection(){
+        list = new ArrayList<>();
+        isiMonster();
     }
 
     public void isiMonster(){

@@ -4,10 +4,11 @@ package com.mycompany.pokemonneatbens;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EarthMonsterCollection extends EarthMonster{
+public class EarthMonsterCollection{
     List<EarthMonster> list;
-    public EarthMonsterCollection(String name, int level, int maxHp, int hp, int ep){
-        super(name, level, maxHp, hp, ep);
+    public EarthMonsterCollection(){
+        list = new ArrayList<>();
+        isiMonster();
         
     }
 

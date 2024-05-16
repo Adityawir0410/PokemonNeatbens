@@ -56,12 +56,12 @@ public class GameManager {
                     WindWildMonsters.add(monster);
                     break;
                 case 1:
-                    WaterMonsterCollection monster = new WaterMonsterCollection();
+                    WaterMonsterCollection monsterWater = new WaterMonsterCollection();
                     monster.getMonster(random.nextInt(2));
-                    WaterWildMonsters.add(monster);
+                    WaterWildMonsters.add(monsterWater);
                     break;
                 case 2:
-                    WindMonsterCollection monster = new WindMonsterCollection();
+                    WindMonsterCollection monsterIce = new WindMonsterCollection();
                     monster.getMonster(random.nextInt(2));
                     WindWildMonsters.add(monster);
                     break;
