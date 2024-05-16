@@ -7,9 +7,9 @@ public class GameManager {
     private List<Monster> playerMonsters;
     private List<WaterMonsterCollection> WaterWildMonsters;
     private List<WindMonsterCollection> WindWildMonsters;
-    private List<FireMonster> FireWildMonsters;
-    private List<IceMonster> IceWildMonsters;
-    private List<EarthMonster> EarthWildMonsters;
+    private List<FireMonsterCollection> FireWildMonsters;
+    private List<IceMonsterCollection> IceWildMonsters;
+    private List<EarthMonsterCollection> EarthWildMonsters;
 
     // Getter untuk wildMonsters
     public List<WindMonsterCollection> getWindMonsters() {
@@ -57,40 +57,64 @@ public class GameManager {
                     break;
                 case 1:
                     WaterMonsterCollection monsterWater = new WaterMonsterCollection();
-                    monster.getMonster(random.nextInt(2));
+                    monsterWater.getMonster(random.nextInt(2));
                     WaterWildMonsters.add(monsterWater);
                     break;
                 case 2:
-                    WindMonsterCollection monsterIce = new WindMonsterCollection();
-                    monster.getMonster(random.nextInt(2));
-                    WindWildMonsters.add(monster);
+                    IceMonsterCollection monsterIce = new IceMonsterCollection();
+                    monsterIce.getMonster(random.nextInt(2));
+                    IceWildMonsters.add(monsterIce);
                     break;
                 case 3:
-                    WindMonsterCollection monster = new WindMonsterCollection();
-                    monster.getMonster(random.nextInt(2));
-                    WindWildMonsters.add(monster);
+                    WindMonsterCollection monsterFire = new WindMonsterCollection();
+                    monsterFire.getMonster(random.nextInt(2));
+                    WindWildMonsters.add(monsterFire);
                     break;
                 case 4:
-                    WindMonsterCollection monster = new WindMonsterCollection();
-                    monster.getMonster(random.nextInt(2));
-                    WindWildMonsters.add(monster);
+                    WindMonsterCollection monsterEarth = new WindMonsterCollection();
+                    monsterEarth.getMonster(random.nextInt(2));
+                    WindWildMonsters.add(monsterEarth);
                     break;
             
                 default:
                     break;
             }
-            if (type == 0) {
-            } else {
-                monster = new WindMonster(name, level, maxHp, hp, ep);
-            }
+        }
+    }
 
-            String name = "Wild Monster " + (i + 1);
-            int level = random.nextInt(20) + 1; // Level monster liar antara 1 hingga 20
-            int maxHp = level * 50; // Max HP berdasarkan level
-            int hp = maxHp;
-            int ep = 0;
-
-
+    public WindMonsterCollection getWindMonster(){
+        if (WindWildMonsters.size() == 1){
+            return WindWildMonsters.get(0);
+        }else {
+            return null;
+        }
+    }
+    public WaterMonsterCollection getWaterMonster(){
+        if (WindWildMonsters.size() == 1){
+            return WaterWildMonsters.get(0);
+        }else {
+            return null;
+        }
+    }
+    public FireMonsterCollection getFireMonster(){
+        if (WindWildMonsters.size() == 1){
+            return FireWildMonsters.get(0);
+        }else {
+            return null;
+        }
+    }
+    public IceMonsterCollection getIceMonster(){
+        if (WindWildMonsters.size() == 1){
+            return IceWildMonsters.get(0);
+        }else {
+            return null;
+        }
+    }
+    public EarthMonsterCollection getEarthMonster(){
+        if (WindWildMonsters.size() == 1){
+            return EarthWildMonsters.get(0);
+        }else {
+            return null;
         }
     }
 

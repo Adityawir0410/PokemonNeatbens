@@ -68,6 +68,17 @@ public class PokemonNeatbens {
                 case 1:
                     System.out.println("Menghasilkan monster liar...");
                     gameManager.generateWildMonsters();
+                    if (gameManager.getWindMonster() != null) {
+                        
+                    }else if (gameRunning) {
+                        
+                    }else if (gameRunning) {
+                        
+                    }else if (gameRunning) {
+                        
+                    }else{
+                        
+                    }
                     System.out.println("Anda menemukan " + gameManager.getWildMonsters().size() + " monster liar!");
 
                     for (int i = 0; i < gameManager.getWildMonsters().size(); i++) {
