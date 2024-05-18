@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.pokemonneatbens;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 /**
  *
@@ -11,6 +13,18 @@ import java.util.Random;
 public class WindMonster extends Monster {
     public WindMonster(String name, int level, int maxHp, int hp, int ep) {
         super(name, level, maxHp, hp, ep, Element.WIND);
+    }
+
+    public WindMonster IceMonsterCollection(int index){
+        List <WindMonster> list = new ArrayList<>();
+        list.add(new WindMonster("Anemos", 1 , 100, 100, 100));
+        list.add(new WindMonster("Ishchyroi", 1 , 100, 100, 100));
+
+        if (index == 0) {
+            return list.get(0);
+        }else{
+            return list.get(1);
+        }
     }
 
     @Override
