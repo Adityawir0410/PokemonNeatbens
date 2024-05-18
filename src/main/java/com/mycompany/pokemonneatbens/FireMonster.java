@@ -4,6 +4,8 @@
  */
 package com.mycompany.pokemonneatbens;
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 import com.mycompany.pokemonneatbens.Monster;
 /**
  *
@@ -12,6 +14,18 @@ import com.mycompany.pokemonneatbens.Monster;
 class FireMonster extends Monster {
     public FireMonster(String name, int level, int maxHp, int hp, int ep) {
         super(name, level, maxHp, hp, ep, Element.FIRE);
+    }
+
+    public FireMonster FireMonsterCollection(int index){
+        List <FireMonster> list = new ArrayList<>();
+        list.add(new FireMonster("Fotia", 1 , 100, 100, 100));
+        list.add(new FireMonster("Megali", 1 , 100, 100, 100));
+
+        if (index == 0) {
+            return list.get(0);
+        }else{
+            return list.get(1);
+        }
     }
 
     @Override
