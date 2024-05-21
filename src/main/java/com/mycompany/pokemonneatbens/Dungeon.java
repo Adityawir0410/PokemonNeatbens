@@ -71,7 +71,7 @@ public class Dungeon extends Dunia{
                 System.out.println("5. Melarikan Diri");
 
                 int choice = scanner.nextInt();
-
+                Item item = null;
                 switch (choice) {
                     case 1:
                         playerMonster.basicAttack(wildMonster);
@@ -87,7 +87,6 @@ public class Dungeon extends Dunia{
                         System.out.println("1. Health Potion \n2. Attack Potion\n 3. OkeBall");
                         switch (scanner.nextInt()) {
                             case 1:
-                                
                                 break;
                             case 2:
                                 
@@ -99,8 +98,6 @@ public class Dungeon extends Dunia{
                             default:
                                 break;
                         }
-
-                        Item item = new Item(itemName, itemType);
                         playerMonster.useItem(item);
                         break;
                     case 5:
