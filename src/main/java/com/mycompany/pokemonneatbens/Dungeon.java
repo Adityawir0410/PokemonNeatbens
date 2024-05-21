@@ -4,6 +4,8 @@
  */
 package com.mycompany.pokemonneatbens;
 
+import java.util.Random;
+
 /**
  *
  * @author piosg
@@ -21,6 +23,31 @@ public class Dungeon extends Dunia{
     @Override
     public Dungeon GoDungeon() {
         throw new UnsupportedOperationException("Kamu berada di Dungeon"); 
+    }
+
+     public void generateWildMonsters() {
+        Random random = new Random();
+        int numMonsters = 1; // Jumlah monster liar antara 1 hingga 5
+
+        for (int i = 0; i < numMonsters; i++) {
+            int type = random.nextInt(5);
+            Monster monster = null;
+            switch (type) {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            
+                default:
+                    break;
+            }
+        }
     }
     
 }

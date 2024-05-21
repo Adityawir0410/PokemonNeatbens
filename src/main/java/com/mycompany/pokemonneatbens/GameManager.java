@@ -5,119 +5,18 @@ import java.util.*;
 
 public class GameManager {
     private List<Monster> playerMonsters;
-    private List<WaterMonsterCollection> WaterWildMonsters;
-    private List<WindMonsterCollection> WindWildMonsters;
-    private List<FireMonsterCollection> FireWildMonsters;
-    private List<IceMonsterCollection> IceWildMonsters;
-    private List<EarthMonsterCollection> EarthWildMonsters;
-
-    // Getter untuk wildMonsters
-    public List<WindMonsterCollection> getWindMonsters() {
-        return WindWildMonsters;
-    }
-    public List<WaterMonsterCollection> getWaterMonsters() {
-        return WaterWildMonsters;
-    }
-    public List<FireMonsterCollection> getFireMonsters() {
-        return FireWildMonsters;
-    }
-    public List<IceMonsterCollection> getIceMonsters() {
-        return IceWildMonsters;
-    }
-    public List<EarthMonsterCollection> getEarthMonsters() {
-        return EarthWildMonsters;
-    }
+    private List<Monster> WildMonster;
 
     public GameManager() {
         playerMonsters = new ArrayList<>();
-        WaterWildMonsters = new ArrayList<>();
-        WindWildMonsters = new ArrayList<>();
-        FireWildMonsters = new ArrayList<>();
-        IceWildMonsters = new ArrayList<>();
-        EarthWildMonsters = new ArrayList<>();
+        WildMonster = new ArrayList<>();
     }
 
     // Metode untuk menambahkan monster pemain
     public void addPlayerMonster(Monster monster) {
         playerMonsters.add(monster);
     }
-
-    // Metode untuk menghasilkan monster liar secara acak
-    public void generateWildMonsters() {
-        Random random = new Random();
-        int numMonsters = 1; // Jumlah monster liar antara 1 hingga 5
-
-        for (int i = 0; i < numMonsters; i++) {
-            int type = random.nextInt(5);
-            switch (type) {
-                case 0:
-                    WindMonsterCollection monster = new WindMonsterCollection();
-                    monster.getMonster(random.nextInt(2));
-                    WindWildMonsters.add(monster);
-                    break;
-                case 1:
-                    WaterMonsterCollection monsterWater = new WaterMonsterCollection();
-                    monsterWater.getMonster(random.nextInt(2));
-                    WaterWildMonsters.add(monsterWater);
-                    break;
-                case 2:
-                    IceMonsterCollection monsterIce = new IceMonsterCollection();
-                    monsterIce.getMonster(random.nextInt(2));
-                    IceWildMonsters.add(monsterIce);
-                    break;
-                case 3:
-                    WindMonsterCollection monsterFire = new WindMonsterCollection();
-                    monsterFire.getMonster(random.nextInt(2));
-                    WindWildMonsters.add(monsterFire);
-                    break;
-                case 4:
-                    WindMonsterCollection monsterEarth = new WindMonsterCollection();
-                    monsterEarth.getMonster(random.nextInt(2));
-                    WindWildMonsters.add(monsterEarth);
-                    break;
-            
-                default:
-                    break;
-            }
-        }
-    }
-
-    public WindMonsterCollection getWindMonster(){
-        if (WindWildMonsters.size() == 1){
-            return WindWildMonsters.get(0);
-        }else {
-            return null;
-        }
-    }
-    public WaterMonsterCollection getWaterMonster(){
-        if (WindWildMonsters.size() == 1){
-            return WaterWildMonsters.get(0);
-        }else {
-            return null;
-        }
-    }
-    public FireMonsterCollection getFireMonster(){
-        if (WindWildMonsters.size() == 1){
-            return FireWildMonsters.get(0);
-        }else {
-            return null;
-        }
-    }
-    public IceMonsterCollection getIceMonster(){
-        if (WindWildMonsters.size() == 1){
-            return IceWildMonsters.get(0);
-        }else {
-            return null;
-        }
-    }
-    public EarthMonsterCollection getEarthMonster(){
-        if (WindWildMonsters.size() == 1){
-            return EarthWildMonsters.get(0);
-        }else {
-            return null;
-        }
-    }
-
+    
     // Metode untuk memulai pertarungan
     public void startBattle(Monster playerMonster, Monster wildMonster) {
         Scanner scanner = new Scanner(System.in);
