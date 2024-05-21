@@ -84,15 +84,20 @@ public class Dungeon extends Dunia{
                         break;
                     case 4:
                         System.out.println("Masukkan item yang ingin digunakan:");
-                        String itemName = scanner.next();
-                        ItemType itemType;
-
-                        if (itemName.equalsIgnoreCase("health potion")) {
-                            itemType = ItemType.HEALTH_POTION;
-                        } else if (itemName.equalsIgnoreCase("elemental potion")) {
-                            itemType = ItemType.ELEMENTAL_POTION;
-                        } else {
-                            itemType = ItemType.OTHER;
+                        System.out.println("1. Health Potion \n2. Attack Potion\n 3. OkeBall");
+                        switch (scanner.nextInt()) {
+                            case 1:
+                                
+                                break;
+                            case 2:
+                                
+                                break;
+                            case 3:
+                                
+                                break;
+                        
+                            default:
+                                break;
                         }
 
                         Item item = new Item(itemName, itemType);
@@ -113,8 +118,7 @@ public class Dungeon extends Dunia{
             } else {
                 System.out.println("\nGiliran Monster Liar!");
 
-                int choice = new Random().nextInt(3); // Memilih aksi secara acak (0 = serangan dasar, 1 = serangan
-                                                      // spesial, 2 = serangan elemen)
+                int choice = new Random().nextInt(3);
                 switch (choice) {
                     case 0:
                         wildMonster.basicAttack(playerMonster);
