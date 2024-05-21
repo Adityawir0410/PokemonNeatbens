@@ -12,13 +12,13 @@ import java.util.Random;
  */
 public class WaterMonster extends Monster {
     public WaterMonster(String name, int level, int maxHp, int hp, int ep) {
-        super(name, level, maxHp, hp, ep, Element.WIND);
+        super(name, level, maxHp, hp, ep, Element.WATER);
     }
 
-    public WaterMonster IceMonsterCollection(int index){
+    public static WaterMonster WaterMonsterCollection(int index){
         List <WaterMonster> list = new ArrayList<>();
-        list.add(new WaterMonster("Krya", 1 , 100, 100, 100));
-        list.add(new WaterMonster("Pagomenos", 1 , 100, 100, 100));
+        list.add(new WaterMonster("Naida", 1 , 100, 100, 100));
+        list.add(new WaterMonster("Irupe", 1 , 100, 100, 100));
 
         if (index == 0) {
             return list.get(0);
@@ -49,7 +49,7 @@ public class WaterMonster extends Monster {
     @Override
     public void elementalAttack(Monster target) {
         int damage;
-        if (target.getElement() == Element.FIRE || target.getElement() == Element.EARTH) {
+        if (target.getElement() == Element.FIRE) {
             damage = level * 18; // Damage elemen efektif berdasarkan level
         } else {
             damage = level * 10; // Damage elemen normal berdasarkan level

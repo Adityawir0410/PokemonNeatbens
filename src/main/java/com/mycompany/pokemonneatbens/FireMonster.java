@@ -16,7 +16,7 @@ class FireMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.FIRE);
     }
 
-    public FireMonster FireMonsterCollection(int index){
+    public static FireMonster FireMonsterCollection(int index){
         List <FireMonster> list = new ArrayList<>();
         list.add(new FireMonster("Fotia", 1 , 100, 100, 100));
         list.add(new FireMonster("Megali", 1 , 100, 100, 100));
@@ -50,7 +50,7 @@ class FireMonster extends Monster {
     @Override
     public void elementalAttack(Monster target) {
         int damage;
-        if (target.getElement() == Element.GRASS || target.getElement() == Element.ICE) {
+        if (target.getElement() == Element.ICE) {
             damage = level * 20; // Damage elemen efektif berdasarkan level
         } else {
             damage = level * 10; // Damage elemen normal berdasarkan level

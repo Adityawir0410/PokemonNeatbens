@@ -16,7 +16,7 @@ public class IceMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.ICE);
     }
 
-    public IceMonster IceMonsterCollection(int index){
+    public static IceMonster IceMonsterCollection(int index){
         List <IceMonster> list = new ArrayList<>();
         list.add(new IceMonster("Krya", 1 , 100, 100, 100));
         list.add(new IceMonster("Pagomenos", 1 , 100, 100, 100));
@@ -50,7 +50,7 @@ public class IceMonster extends Monster {
     @Override
     public void elementalAttack(Monster target) {
         int damage;
-        if (target.getElement() == Element.GRASS || target.getElement() == Element.ICE) {
+        if (target.getElement() == Element.WIND) {
             damage = level * 20; // Damage elemen efektif berdasarkan level
         } else {
             damage = level * 10; // Damage elemen normal berdasarkan level
