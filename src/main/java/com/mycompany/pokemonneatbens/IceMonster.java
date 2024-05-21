@@ -16,7 +16,7 @@ public class IceMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.ICE);
     }
 
-    public IceMonster IceMonsterCollection(int index){
+    public static IceMonster IceMonsterCollection(int index){
         List <IceMonster> list = new ArrayList<>();
         list.add(new IceMonster("Krya", 1 , 100, 100, 100));
         list.add(new IceMonster("Pagomenos", 1 , 100, 100, 100));

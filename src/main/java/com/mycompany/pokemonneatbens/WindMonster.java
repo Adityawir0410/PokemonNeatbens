@@ -15,7 +15,7 @@ public class WindMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.WIND);
     }
 
-    public WindMonster IceMonsterCollection(int index){
+    public static WindMonster IceMonsterCollection(int index){
         List <WindMonster> list = new ArrayList<>();
         list.add(new WindMonster("Anemos", 1 , 100, 100, 100));
         list.add(new WindMonster("Ishchyroi", 1 , 100, 100, 100));

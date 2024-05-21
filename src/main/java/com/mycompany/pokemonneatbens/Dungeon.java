@@ -36,20 +36,19 @@ public class Dungeon extends Dunia{
             switch (type) {
                 case 0:
                     monster = FireMonster.FireMonsterCollection(pokemonRandom);
-                    monster = FireMonster.FireMonsterCollection(pokemonRandom);
-                    monster = FireMonster.FireMonsterCollection(pokemonRandom);
-                    monster = FireMonster.FireMonsterCollection(pokemonRandom);
                     break;
                 case 1:
                     monster = EarthMonster.EarthMonsterCollection(pokemonRandom);
                     break;
                 case 2:
+                    monster = IceMonster.IceMonsterCollection(pokemonRandom);
                     break;
                 case 3:
+                    monster = WindMonster.WindMonsterCollection(pokemonRandom);
                     break;
                 case 4:
+                    monster = WaterMonster.WaterMonsterCollection(pokemonRandom);
                     break;
-            
                 default:
                     break;
             }

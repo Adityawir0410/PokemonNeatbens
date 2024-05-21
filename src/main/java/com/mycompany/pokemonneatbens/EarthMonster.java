@@ -16,7 +16,7 @@ class EarthMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.EARTH);
     }
 
-    public static EarthMonster FireMonsterCollection(int index){
+    public static EarthMonster EarthMonsterCollection(int index){
         List <EarthMonster> list = new ArrayList<>();
         list.add(new EarthMonster("Agoni", 1 , 100, 100, 100));
         list.add(new EarthMonster("Trachy", 1 , 100, 100, 100));
