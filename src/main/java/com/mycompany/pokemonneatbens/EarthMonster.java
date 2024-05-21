@@ -30,7 +30,7 @@ class EarthMonster extends Monster {
 
     @Override
     public void basicAttack(Monster target) {
-        int damage = level * 10; // Damage dasar berdasarkan level
+        int damage = level * 10;
         target.takeDamage(damage);
         System.out.println(
                 name + " melakukan serangan dasar kepada " + target.getName() + " dan mengurangi " + damage + " HP.");
@@ -38,8 +38,8 @@ class EarthMonster extends Monster {
 
     @Override
     public void specialAttack(Monster target) {
-        int damage = level * 15; // Damage spesial berdasarkan level
-        int selfDamage = (int) (maxHp * 0.1); // Damage ke diri sendiri (10% dari max HP)
+        int damage = level * 15;
+        int selfDamage = (int) (maxHp * 0.1);
         takeDamage(selfDamage);
         target.takeDamage(damage);
         System.out.println(
@@ -63,11 +63,11 @@ class EarthMonster extends Monster {
     @Override
     public void useItem(Item item) {
         if (item.getType() == ItemType.HEALTH_POTION) {
-            int healAmount = 50; // Jumlah HP yang akan dipulihkan
+            int healAmount = 50;
             heal(healAmount);
             System.out.println(name + " menggunakan Health Potion dan memulihkan " + healAmount + " HP.");
         } else if (item.getType() == ItemType.ELEMENTAL_POTION) {
-            int damage = level * 15; // Damage serangan elemen berdasarkan level
+            int damage = level * 15;
             System.out.println(
                     name + " menggunakan Elemental Potion dan melakukan serangan api dengan damage " + damage + ".");
         }
