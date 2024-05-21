@@ -49,7 +49,7 @@ public class WindMonster extends Monster {
     @Override
     public void elementalAttack(Monster target) {
         int damage;
-        if (target.getElement() == Element.FIRE || target.getElement() == Element.EARTH) {
+        if (target.getElement() == Element.EARTH) {
             damage = level * 18; // Damage elemen efektif berdasarkan level
         } else {
             damage = level * 10; // Damage elemen normal berdasarkan level

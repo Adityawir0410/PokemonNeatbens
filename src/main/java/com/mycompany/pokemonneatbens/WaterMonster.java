@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class WaterMonster extends Monster {
     public WaterMonster(String name, int level, int maxHp, int hp, int ep) {
-        super(name, level, maxHp, hp, ep, Element.WIND);
+        super(name, level, maxHp, hp, ep, Element.WATER);
     }
 
     public static WaterMonster WaterMonsterCollection(int index){
@@ -49,7 +49,7 @@ public class WaterMonster extends Monster {
     @Override
     public void elementalAttack(Monster target) {
         int damage;
-        if (target.getElement() == Element.FIRE || target.getElement() == Element.EARTH) {
+        if (target.getElement() == Element.FIRE) {
             damage = level * 18; // Damage elemen efektif berdasarkan level
         } else {
             damage = level * 10; // Damage elemen normal berdasarkan level

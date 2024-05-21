@@ -50,7 +50,7 @@ class FireMonster extends Monster {
     @Override
     public void elementalAttack(Monster target) {
         int damage;
-        if (target.getElement() == Element.GRASS || target.getElement() == Element.ICE) {
+        if (target.getElement() == Element.ICE) {
             damage = level * 20; // Damage elemen efektif berdasarkan level
         } else {
             damage = level * 10; // Damage elemen normal berdasarkan level
