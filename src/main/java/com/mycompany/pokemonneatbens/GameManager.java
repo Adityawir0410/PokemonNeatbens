@@ -18,14 +18,14 @@ public class GameManager {
     }
 
     // Metode untuk evolusi monster
-    public void evolveMonster(Monster monster, Element newElement) throws InvalidEvolutionException {
-        if (canEvolve(monster.getElement(), newElement)) {
-            monster.setElement(newElement);
-            System.out.println(monster.getName() + " berevolusi menjadi elemen " + newElement + "!");
-        } else {
-            throw new InvalidEvolutionException("Evolusi tidak valid untuk elemen tersebut.");
-        }
-    }
+//    public void evolveMonster(Monster monster, Element newElement) throws InvalidEvolutionException {
+//        if (canEvolve(monster.getElement(), newElement)) {
+//            monster.setElement(newElement);
+//            System.out.println(monster.getName() + " berevolusi menjadi elemen " + newElement + "!");
+//        } else {
+//            throw new InvalidEvolutionException("Evolusi tidak valid untuk elemen tersebut.");
+//        }
+//    }
 
     // Metode untuk memeriksa apakah evolusi diperbolehkan
     private boolean canEvolve(Element currentElement, Element newElement) {

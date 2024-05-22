@@ -61,15 +61,15 @@ public class WindMonster extends Monster {
 
     @Override
     public void useItem(Item item) {
-        if (item.getType() == ItemType.HEALTH_POTION) {
-            int healAmount = 30; // Jumlah HP yang akan dipulihkan
-            heal(healAmount);
-            System.out.println(name + " menggunakan Health Potion dan memulihkan " + healAmount + " HP.");
-        } else if (item.getType() == ItemType.ELEMENTAL_POTION) {
-            int damage = level * 12; // Damage serangan elemen berdasarkan level
-            System.out.println(
-                    name + " menggunakan Elemental Potion dan melakukan serangan angin dengan damage " + damage + ".");
-        }
+//        if (item.getType() == ItemType.HEALTH_POTION) {
+//            int healAmount = 30; // Jumlah HP yang akan dipulihkan
+//            heal(healAmount);
+//            System.out.println(name + " menggunakan Health Potion dan memulihkan " + healAmount + " HP.");
+//        } else if (item.getType() == ItemType.ELEMENTAL_POTION) {
+//            int damage = level * 12; // Damage serangan elemen berdasarkan level
+//            System.out.println(
+//                    name + " menggunakan Elemental Potion dan melakukan serangan angin dengan damage " + damage + ".");
+//        }
     }
 
     @Override

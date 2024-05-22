@@ -1,8 +1,9 @@
+
 ///*
 // * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 // */
 //
-//package com.mycompany.pokemonneatbens;
+package com.mycompany.pokemonneatbens;
 //
 ///**
 // *
@@ -12,14 +13,14 @@
 //import java.util.*;
 //
 //// Enum untuk elemen monster
-//enum Element {
-//    FIRE,
-//    WIND,
-//    WATER,
-//    ICE,
-//    EARTH,
-//    GRASS
-//}
+enum Element {
+    FIRE,
+    WIND,
+    WATER,
+    ICE,
+    EARTH,
+    GRASS
+}
 //
 //// Class untuk item
 //
@@ -36,8 +37,10 @@
 //
 //
 //// Class utama untuk menjalankan game
-//public class PokemonNeatbens {
-//    public static void main(String[] args) {
+public class PokemonNeatbens {
+    public static void main(String[] args) {
+        UsserInterface a = new UsserInterface();
+        a.setVisible(true);
 //        GameManager gameManager = new GameManager();
 //        Scanner scanner = new Scanner(System.in);
 //
@@ -145,5 +148,5 @@
 //                    break;
 //            }
 //        }
-//    }
-//}
+    }
+}

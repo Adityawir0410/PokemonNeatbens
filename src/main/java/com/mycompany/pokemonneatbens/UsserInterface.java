@@ -40,7 +40,7 @@ public class UsserInterface extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 940, 460, 110));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 890, 460, 110));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/2.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -48,7 +48,7 @@ public class UsserInterface extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 690, 460, 110));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 640, 460, 110));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/3.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -56,10 +56,10 @@ public class UsserInterface extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 810, 460, 110));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 760, 460, 110));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/LobbyMain.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1080));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -73,8 +73,8 @@ public class UsserInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System.exit (0);
-        //bismillah
+        System.exit(0);
+        //gacor gacor
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

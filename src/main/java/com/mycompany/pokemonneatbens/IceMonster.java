@@ -6,7 +6,7 @@ package com.mycompany.pokemonneatbens;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import com.mycompany.pokemonneatbens.Monster;
+
 /**
  *
  * @author aditya wirz
@@ -62,15 +62,15 @@ public class IceMonster extends Monster {
 
     @Override
     public void useItem(Item item) {
-        if (item.getType() == ItemType.HEALTH_POTION) {
-            int healAmount = 50; // Jumlah HP yang akan dipulihkan
-            heal(healAmount);
-            System.out.println(name + " menggunakan Health Potion dan memulihkan " + healAmount + " HP.");
-        } else if (item.getType() == ItemType.ELEMENTAL_POTION) {
-            int damage = level * 15; // Damage serangan elemen berdasarkan level
-            System.out.println(
-                    name + " menggunakan Elemental Potion dan melakukan serangan api dengan damage " + damage + ".");
-        }
+//        if (item.getType() == ItemType.HEALTH_POTION) {
+//            int healAmount = 50; // Jumlah HP yang akan dipulihkan
+//            heal(healAmount);
+//            System.out.println(name + " menggunakan Health Potion dan memulihkan " + healAmount + " HP.");
+//        } else if (item.getType() == ItemType.ELEMENTAL_POTION) {
+//            int damage = level * 15; // Damage serangan elemen berdasarkan level
+//            System.out.println(
+//                    name + " menggunakan Elemental Potion dan melakukan serangan api dengan damage " + damage + ".");
+//        }
     }
 
     @Override
