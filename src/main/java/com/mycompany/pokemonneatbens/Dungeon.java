@@ -57,7 +57,7 @@ public class Dungeon extends Dunia{
     }
 
 
-    public void startBattle(Monster playerMonster, Monster wildMonster) {
+    public void startBattle(Player player, Monster playerMonster, Monster wildMonster) {
         Scanner scanner = new Scanner(System.in);
         boolean playerTurn = true;
 
@@ -81,18 +81,38 @@ public class Dungeon extends Dunia{
                         break;
                     case 3:
                         playerMonster.elementalAttack(wildMonster);
+                        playerMonster.boosted = false;
                         break;
                     case 4:
                         System.out.println("Masukkan item yang ingin digunakan:");
                         System.out.println("1. Health Potion \n2. Attack Potion\n 3. OkeBall");
                         switch (scanner.nextInt()) {
                             case 1:
+                                if (player.health.size() > 0) {
+                                    item = player.health.get(0);
+                                    playerMonster.hp += item.getEffect();
+                                    player.health.remove(0);
+                                }else{
+                                    System.out.println("Kamu Tidak Punya Health Potion");
+                                }
                                 break;
                             case 2:
-                                
+                                if (player.courage.size() > 0) {
+                                    item = player.courage.get(0);
+                                    playerMonster.boosted = true;
+                                    player.courage.remove(0);
+                                }else{
+                                    System.out.println("Kamu Tidak Punya Courage Potion");
+                                }
                                 break;
-                            case 3:
-                                
+                                case 3:
+                                if (player.okeball.size() > 0) {
+                                    item = player.courage.get(0);
+                                    //Menangkap okemon
+                                    player.okeball.remove(0);
+                                }else{
+                                    System.out.println("Kamu Tidak Punya Courage Potion");
+                                }
                                 break;
                         
                             default:

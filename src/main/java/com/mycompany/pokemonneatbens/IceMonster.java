@@ -55,7 +55,11 @@ public class IceMonster extends Monster {
         } else {
             damage = level * 10; // Damage elemen normal berdasarkan level
         }
-        target.takeDamage(damage);
+        if (boosted) {
+            target.takeDamage(damage + 10);
+        }else{
+            target.takeDamage(damage);
+        }
         System.out.println(name + " melakukan serangan elemen api kepada " + target.getName() + " dan mengurangi "
                 + damage + " HP.");
     }

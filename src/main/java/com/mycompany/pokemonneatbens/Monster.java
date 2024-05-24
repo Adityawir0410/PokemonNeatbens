@@ -9,6 +9,8 @@ abstract class Monster implements MonsterAction {
     protected int hp;
     protected int ep;
     protected Element element;
+    protected boolean boosted;
+    protected boolean ketangkap;
 
     public Monster(String name, int level, int maxHp, int hp, int ep, Element element) {
         this.name = name;
@@ -17,6 +19,8 @@ abstract class Monster implements MonsterAction {
         this.hp = hp;
         this.ep = ep;
         this.element = element;
+        boosted = false;
+        ketangkap = false;
     }
 
     public abstract void basicAttack(Monster target);
