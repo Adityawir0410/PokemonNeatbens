@@ -4,37 +4,46 @@ import java.io.IOException;
 import java.util.*;
 
 public class GameManager {
-    private List<Monster> playerMonsters;
-    private List<Monster> WildMonster;
 
     public GameManager() {
-        playerMonsters = new ArrayList<>();
-        WildMonster = new ArrayList<>();
+
     }
 
-    // Metode untuk menambahkan monster pemain
-    public void addPlayerMonster(Monster monster) {
-        playerMonsters.add(monster);
+    public void StartNewGame(){
+        Scanner input = new Scanner(System.in);
+        Dunia dunia = new HomeBase(null);
+        Player player;
+        System.out.println("Selamat Datang di Dunia Okemon");
+        System.out.print("Nama: ");
+        String nama = input.nextLine();
+        System.out.println("Pilih 1 Okemon dari 3 Okemon berikut");
+        System.out.println("1.Megali, Elemen: Api");
+        System.out.println("2.Naida, Elemen: Air");
+        System.out.println("3.Anemos, Elemen: Angin");
+        System.out.printf("Pilihan Anda (1-3): ");
+        int pilihan = input.nextInt();
+        switch (pilihan) {
+            case 1:
+                player = new Player(nama, null, null, null, null);
+                player.FirstOkemon(FireMonster.FireMonsterCollection(1));
+                break;
+            case 2:
+                player = new Player(nama, null, null, null, null);
+                player.FirstOkemon(WaterMonster.WaterMonsterCollection(0));
+                break;
+            case 3:
+                player = new Player(nama, null, null, null, null);
+                player.FirstOkemon(WindMonster.WindMonsterCollection(0));
+                break;
+            default:
+                break;
+        }
     }
-
-
 
     
 
     // Metode untuk menyimpan progres game ke file teks
     public void saveProgress() {
-        try {
-            FileWriter writer = new FileWriter("game_progress.txt");
-            writer.write("Progres Game:\n");
-            writer.write("Monster Pemain:\n");
-            for (Monster monster : playerMonsters) {
-                writer.write(monster.getName() + ", Level: " + monster.getLevel() + ", HP: " + monster.getHp() + "/"
-                        + monster.getMaxHp() + ", EP: " + monster.getEp() + ", Elemen: " + monster.getElement() + "\n");
-            }
-            writer.close();
-            System.out.println("Progres game berhasil disimpan ke file game_progress.txt.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       
     }
 }

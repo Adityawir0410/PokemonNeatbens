@@ -22,7 +22,9 @@ public class Player {
         this.okeball =okeball;
         this.playerMonster = playerMonster;
     }
-
+    public void FirstOkemon(Monster monster){
+        playerMonster.add(monster);
+    }
     public void tangkapOkemon(Monster WildMonster){
         if (WildMonster.hp / WildMonster.maxHp * 100 < 25) {
             //ketangkap jir terus ini ditambahin ke mana gatau wkwkwkwk
