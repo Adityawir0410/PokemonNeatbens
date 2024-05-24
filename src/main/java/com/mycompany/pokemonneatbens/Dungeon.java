@@ -199,52 +199,8 @@ public class Dungeon extends Dunia{
         }
 
         if (playerMonster.getHp() <= 0) {
-            if (player.playerMonster.size() > 1) {
-                int pilihan = player.playerMonster.indexOf(playerMonster);
-                Monster mons1 = null;
-                Monster mons2 = null;
-                for (int i = 0; i < player.playerMonster.size(); i++) {
-                    if (i != pilihan && mons1 == null) {
-                        mons1 = player.playerMonster.get(i);
-                        if (mons1.hp == 0) {
-                            mons1 = null;
-                        }
-                    }else if (i != pilihan && mons1 != null) {
-                        mons2 = player.playerMonster.get(i);
-                        if (mons2.hp == 0) {
-                            mons2 = null;
-                        }
-                    }
-                }
-                if (mons1 == null && mons2 == null) {
-                    System.out.println("Kamu Kalah!");
-                }else if(mons1 == null && mons2 != null) {
-                    playerMonster = mons2;
-                    System.out.println(mons2.name + " Keluar!");
-                }else if(mons1 != null && mons2 == null) {
-                    playerMonster = mons1;
-                    System.out.println(mons1.name + " Keluar!");
-                }else{
-                    System.out.println("Pilih Monster Pengganti! \n" + "1. " + mons1.name + "\n2. " + mons2.name);
-                    int choose = scanner.nextInt();
-                    switch (choose) {
-                        case 1:
-                            playerMonster = mons1;
-                            System.out.println("Kamu Memilih " + mons1.name);
-                            break;
-                        case 2:
-                            playerMonster = mons2;
-                            System.out.println("Kamu Memilih " + mons2.name);
-                            break;
-                        default:
-                            System.out.println("Pilihan Invalid");
-                            break;
-                    }
-                }
-            }else{
                 System.out.println("\nMonster Anda kalah dalam pertarungan!");
                 System.out.println("Kamu Kalah");
-            }
         } else {
             System.out.println("\nSelamat! Monster Anda menang dalam pertarungan!");
             int epGained = wildMonster.getLevel() * 10; // EP yang diperoleh berdasarkan level monster liar
