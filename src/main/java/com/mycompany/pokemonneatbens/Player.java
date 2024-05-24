@@ -22,16 +22,12 @@ public class Player {
     }
 
     public void tangkapOkemon(Monster WildMonster){
-        if (okeball.size() > 0) {
-            if (WildMonster.hp / WildMonster.maxHp * 100 < 25) {
-                //ketangkap jir
-                System.out.println("Kamu menangkap " + WildMonster.name);
-                WildMonster.ketangkap = true;
-            }else{
-                System.out.println(WildMonster.name + " Tidak Ketangkap");
-            }
+        if (WildMonster.hp / WildMonster.maxHp * 100 < 25) {
+            //ketangkap jir terus ini ditambahin ke mana gatau wkwkwkwk
+            System.out.println("Kamu menangkap " + WildMonster.name);
+            WildMonster.ketangkap = true;
         }else{
-            System.out.println("Kamu Tidak Punya Okeball");
+            System.out.println(WildMonster.name + " Tidak Ketangkap");
         }
     }
 }

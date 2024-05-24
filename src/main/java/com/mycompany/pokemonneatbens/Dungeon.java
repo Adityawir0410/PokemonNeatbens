@@ -108,7 +108,10 @@ public class Dungeon extends Dunia{
                                 case 3:
                                 if (player.okeball.size() > 0) {
                                     item = player.courage.get(0);
-                                    //Menangkap okemon
+                                    player.tangkapOkemon(wildMonster);
+                                    if (wildMonster.ketangkap && digunakan != 15) {
+                                        monsterChest[++digunakan] = wildMonster;
+                                    }
                                     player.okeball.remove(0);
                                 }else{
                                     System.out.println("Kamu Tidak Punya Courage Potion");
