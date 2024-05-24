@@ -50,6 +50,29 @@ public class HomeBase extends Dunia{
         }
     }
 
+    public void Shop(Player player){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Selamat Datang di ZelShop");
+        for(int i = 0; i < itemShop.size(); i++){
+            System.out.println( i+1 + ". " + itemShop.get(i).getName() + " Harga: $" + itemShop.get(i).getPrice());
+        }
+        System.out.print("Pilih item yang ingin dibeli menggunakan angka (1-3): ");
+        int pilihan = input.nextInt();
+        input.close();
+        switch (pilihan) {
+            case 1:
+                player.health.add(new Item("Health Potion", 100, 0, 10));
+                break;
+            case 2:
+                player.courage.add(new Item("Attack Potion", 0, 0, 50));
+                break;
+            case 3:
+                player.okeball.add(new Item("OkeBall", 100, 0, 15));
+            default:
+                break;
+        }
+    }
+
     public void levelUpMonster() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
