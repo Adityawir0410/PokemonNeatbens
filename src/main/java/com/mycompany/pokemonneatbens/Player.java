@@ -10,17 +10,17 @@ import java.util.*;
  */
 public class Player {
     String nama;
-    List <Item> health; 
-    List <Item> courage;
-    List <Item> okeball;
-    List <Monster> playerMonster;
+    List <Item> health = new ArrayList<>(); 
+    List <Item> courage = new ArrayList<>();
+    List <Item> okeball = new ArrayList<>();
+    List <Monster> playerMonster = new ArrayList<>();
 
-    public Player(String nama){
+    public Player(String nama, List <Item> health, List <Item> courage, List <Item> okeball, List <Monster> playerMonster){
         this.nama = nama;
-        health = new ArrayList<Item>();
-        courage = new ArrayList<Item>();
-        okeball =new ArrayList<Item>();
-        playerMonster = new ArrayList<>();
+        this.health = health;
+        this.courage = courage;
+        this.okeball =okeball;
+        this.playerMonster = playerMonster;
     }
 
     public void tangkapOkemon(Monster WildMonster){
