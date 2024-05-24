@@ -73,12 +73,10 @@ public class HomeBase extends Dunia{
         }
     }
 
-    public void levelUpMonster() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void healMonster() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void healMonster(Player player) {
+        for(int i = 0; i < player.playerMonster.size(); i++){
+            player.playerMonster.get(i).setHp(player.playerMonster.get(i).maxHp);
+        }
     }
 
         // Metode untuk evolusi monster

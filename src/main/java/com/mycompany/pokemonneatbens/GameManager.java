@@ -21,8 +21,10 @@ public class GameManager {
         System.out.println("2.Naida, Elemen: Air");
         System.out.println("3.Anemos, Elemen: Angin");
         System.out.printf("Pilihan Anda (1-3): ");
-        int pilihan = input.nextInt();
-        switch (pilihan) {
+        int pilihan = 4;
+        while (pilihan > 3 && pilihan < 1) {
+            pilihan = input.nextInt();
+            switch (pilihan) {
             case 1:
                 player = new Player(nama, null, null, null, null);
                 player.FirstOkemon(FireMonster.FireMonsterCollection(1));
@@ -36,7 +38,14 @@ public class GameManager {
                 player.FirstOkemon(WindMonster.WindMonsterCollection(0));
                 break;
             default:
+                System.out.println("Pilihan Tidak Terdapat pilih (1-3)");
                 break;
+            }
+        }
+        while (true) {
+            if(dunia instanceof HomeBase){
+                
+            }
         }
     }
 
