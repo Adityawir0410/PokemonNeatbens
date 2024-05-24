@@ -27,6 +27,26 @@ public class HomeBase extends Dunia{
         return new Dungeon(super.monsterChest);
     }
 
+    private boolean canEvolve(Element currentElement, Element newElement) {
+        // Implementasi aturan evolusi elemen monster
+        switch (currentElement) {
+            case FIRE:
+                return newElement == Element.WIND || newElement == Element.EARTH;
+            case WIND:
+                return newElement == Element.FIRE || newElement == Element.WATER;
+            case WATER:
+                return newElement == Element.GRASS || newElement == Element.ICE;
+            case ICE:
+                return newElement == Element.WIND || newElement == Element.WATER;
+            case EARTH:
+                return newElement == Element.FIRE || newElement == Element.GRASS;
+            case GRASS:
+                return newElement == Element.EARTH || newElement == Element.WATER;
+            default:
+                return false;
+        }
+    }
+
     public void levelUpMonster() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -35,8 +55,11 @@ public class HomeBase extends Dunia{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public void changeElement() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void changeElement(Element currentElement, Element newElement) {
+        if(canEvolve(currentElement, newElement)){
+            
+        }
     }
+    
     
 }
