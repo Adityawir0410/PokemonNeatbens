@@ -55,11 +55,20 @@ public class HomeBase extends Dunia{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public void changeElement(Element currentElement, Element newElement) {
-        if(canEvolve(currentElement, newElement)){
-            
-        }
-    }
+        // Metode untuk evolusi monster
+   public void evolveMonster(Monster monster, Element newElement) throws InvalidEvolutionException {
+       if (canEvolve(monster.getElement(), newElement)) {
+           monster.setElement(newElement);
+           System.out.println(monster.getName() + " berevolusi menjadi elemen " + newElement + "!");
+       } else {
+           throw new InvalidEvolutionException("Evolusi tidak valid untuk elemen tersebut.");
+       }
+   }
     
     
+}
+class InvalidEvolutionException extends Exception {
+   public InvalidEvolutionException(String message) {
+       super(message);
+   }
 }
