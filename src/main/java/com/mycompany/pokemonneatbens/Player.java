@@ -13,12 +13,14 @@ public class Player {
     List <Item> health; 
     List <Item> courage;
     List <Item> okeball;
+    List <Monster> playerMonster;
 
     public Player(String nama){
         this.nama = nama;
         health = new ArrayList<Item>();
         courage = new ArrayList<Item>();
         okeball =new ArrayList<Item>();
+        playerMonster = new ArrayList<>();
     }
 
     public void tangkapOkemon(Monster WildMonster){
