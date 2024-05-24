@@ -15,7 +15,7 @@ abstract class Monster implements MonsterAction {
     public Monster(String name, int level, int maxHp, int hp, int ep, Element element) {
         this.name = name;
         this.level = level;
-        this.maxHp = maxHp;
+        this.maxHp = maxHp * (level * 1/4);
         this.hp = hp;
         this.ep = ep;
         this.element = element;

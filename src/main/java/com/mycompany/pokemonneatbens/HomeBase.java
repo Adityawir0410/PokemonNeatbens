@@ -4,17 +4,20 @@
  */
 package com.mycompany.pokemonneatbens;
 
-import java.util.List;
+import java.util.*;
 
 /**
  *
  * @author piosg
  */
 public class HomeBase extends Dunia{
-    Item shop[] = new Item[5];
+    List <Item> itemShop = new ArrayList<>();
     
     public HomeBase(List<Monster> monsterChest){
         super(monsterChest);
+        itemShop.add(new Item("Health Potion", 100, 0, 10));
+        itemShop.add(new Item("Attack Potion", 0, 0, 50));
+        itemShop.add(new Item("OkeBall", 100, 0, 15));
     }
     
     @Override
