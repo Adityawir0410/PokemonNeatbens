@@ -21,22 +21,7 @@ enum Element {
     EARTH,
     GRASS
 }
-//
-//// Class untuk item
-//
-//
-//
-//// Class Exception buatan sendiri
-//class InvalidEvolutionException extends Exception {
-//    public InvalidEvolutionException(String message) {
-//        super(message);
-//    }
-//}
-//
-//// Class untuk menangani game
-//
-//
-//// Class utama untuk menjalankan game
+
 public class PokemonNeatbens {
     public static void main(String[] args) {
         UsserInterface a = new UsserInterface();

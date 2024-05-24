@@ -4,17 +4,20 @@
  */
 package com.mycompany.pokemonneatbens;
 
-import java.util.List;
+import java.util.*;
 
 /**
  *
  * @author piosg
  */
 public class HomeBase extends Dunia{
-    Item shop[] = new Item[5];
+    List <Item> itemShop = new ArrayList<>();
     
     public HomeBase(List<Monster> monsterChest){
         super(monsterChest);
+        itemShop.add(new Item("Health Potion", 100, 0, 10));
+        itemShop.add(new Item("Attack Potion", 0, 0, 50));
+        itemShop.add(new Item("OkeBall", 100, 0, 15));
     }
     
     @Override
@@ -55,11 +58,20 @@ public class HomeBase extends Dunia{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public void changeElement(Element currentElement, Element newElement) {
-        if(canEvolve(currentElement, newElement)){
-            
-        }
-    }
+        // Metode untuk evolusi monster
+   public void evolveMonster(Monster monster, Element newElement) throws InvalidEvolutionException {
+       if (canEvolve(monster.getElement(), newElement)) {
+           monster.setElement(newElement);
+           System.out.println(monster.getName() + " berevolusi menjadi elemen " + newElement + "!");
+       } else {
+           throw new InvalidEvolutionException("Evolusi tidak valid untuk elemen tersebut.");
+       }
+   }
     
     
+}
+class InvalidEvolutionException extends Exception {
+   public InvalidEvolutionException(String message) {
+       super(message);
+   }
 }
