@@ -4,8 +4,7 @@
  */
 package com.mycompany.pokemonneatbens;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -13,7 +12,7 @@ import java.util.Scanner;
  */
 public class Dungeon extends Dunia{
 
-    public Dungeon(Monster[] monsterChest) {
+    public Dungeon(List<Monster> monsterChest) {
         super(monsterChest);
     }
 
@@ -110,7 +109,7 @@ public class Dungeon extends Dunia{
                                     item = player.courage.get(0);
                                     player.tangkapOkemon(wildMonster);
                                     if (wildMonster.ketangkap && digunakan != 15) {
-                                        monsterChest[++digunakan] = wildMonster;
+                                        monsterChest.add(wildMonster);
                                     }
                                     player.okeball.remove(0);
                                 }else{

@@ -1,11 +1,11 @@
 package com.mycompany.pokemonneatbens;
 
-import com.mycompany.pokemonneatbens.Dungeon;
+import java.util.*;
 
 public abstract class Dunia {
-    public Monster monsterChest[] = new Monster[15];
+    public List<Monster> monsterChest = new ArrayList<>(); 
     public int digunakan;
-    public Dunia(Monster monsterChest[]){
+    public Dunia(List<Monster> monsterChest){
         monsterChest = this.monsterChest;
         digunakan = 0;
     }

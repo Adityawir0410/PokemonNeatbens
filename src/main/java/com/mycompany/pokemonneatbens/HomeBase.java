@@ -4,6 +4,8 @@
  */
 package com.mycompany.pokemonneatbens;
 
+import java.util.List;
+
 /**
  *
  * @author piosg
@@ -11,7 +13,7 @@ package com.mycompany.pokemonneatbens;
 public class HomeBase extends Dunia{
     Item shop[] = new Item[5];
     
-    public HomeBase(Monster monsterChest[]){
+    public HomeBase(List<Monster> monsterChest){
         super(monsterChest);
     }
     
