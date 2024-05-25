@@ -27,57 +27,21 @@ public class YouLoose extends javax.swing.JFrame {
     private void initComponents() {
 
         ToUsserIn2 = new javax.swing.JButton();
-        ToUsserIn5 = new javax.swing.JButton();
-        ToUsserIn3 = new javax.swing.JButton();
-        ToUsserIn4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        ToUsserIn6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ToUsserIn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/backhomebase.png"))); // NOI18N
+        ToUsserIn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/YouLoose/Back.png"))); // NOI18N
         ToUsserIn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToUsserIn2ActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 910, 270, 70));
+        getContentPane().add(ToUsserIn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 860, 300, 70));
 
-        ToUsserIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/exit.png"))); // NOI18N
-        ToUsserIn5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 910, 270, 70));
-
-        ToUsserIn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/searchingpokemon.png"))); // NOI18N
-        ToUsserIn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 790, 440, 100));
-
-        ToUsserIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/save.png"))); // NOI18N
-        ToUsserIn4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 910, 270, 70));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/Dungeon.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/YouLoose/26.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
-
-        ToUsserIn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/HomeBase/Save.png"))); // NOI18N
-        ToUsserIn6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 910, 270, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -85,22 +49,6 @@ public class YouLoose extends javax.swing.JFrame {
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
-
-    private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn3ActionPerformed
-
-    private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn6ActionPerformed
-
-    private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn4ActionPerformed
-
-    private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,10 +89,6 @@ public class YouLoose extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ToUsserIn2;
-    private javax.swing.JButton ToUsserIn3;
-    private javax.swing.JButton ToUsserIn4;
-    private javax.swing.JButton ToUsserIn5;
-    private javax.swing.JButton ToUsserIn6;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
