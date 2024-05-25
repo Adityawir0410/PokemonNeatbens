@@ -37,6 +37,7 @@ public class HomeBaseGUI extends javax.swing.JFrame {
         ToUsserIn3 = new javax.swing.JButton();
         ToUsserIn4 = new javax.swing.JButton();
         ToUsserIn5 = new javax.swing.JButton();
+        ToUsserIn6 = new javax.swing.JButton();
         ToUsserIn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -59,13 +60,13 @@ public class HomeBaseGUI extends javax.swing.JFrame {
         });
         getContentPane().add(ToUsserIn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 270, 70));
 
-        ToUsserIn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/HomeBase/Dungeon.png"))); // NOI18N
+        ToUsserIn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/HomeBase/ChestMonster.png"))); // NOI18N
         ToUsserIn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToUsserIn3ActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 830, 270, 60));
+        getContentPane().add(ToUsserIn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 750, 270, 60));
 
         ToUsserIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/HomeBase/Shop.png"))); // NOI18N
         ToUsserIn4.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +83,14 @@ public class HomeBaseGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ToUsserIn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 910, 270, 60));
+
+        ToUsserIn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/HomeBase/Dungeon.png"))); // NOI18N
+        ToUsserIn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToUsserIn6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ToUsserIn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 830, 270, 60));
 
         ToUsserIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/HomeBase/Heal.png"))); // NOI18N
         ToUsserIn.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +141,10 @@ public class HomeBaseGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ToUsserIn5ActionPerformed
 
+    private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ToUsserIn6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -176,6 +189,7 @@ public class HomeBaseGUI extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn3;
     private javax.swing.JButton ToUsserIn4;
     private javax.swing.JButton ToUsserIn5;
+    private javax.swing.JButton ToUsserIn6;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
