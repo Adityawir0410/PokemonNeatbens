@@ -9,10 +9,16 @@ package com.mycompany.pokemonneatbens;
  * @author aditya wirz
  */
 public class YouLoose extends javax.swing.JFrame {
-
+    Dunia dunia;
+    Player player;
     /**
      * Creates new form UsserInterface
      */
+    public YouLoose(Dunia dunia, Player player){
+        initComponents();
+        this.dunia = dunia;
+        this.player = player;
+    }
     public YouLoose() {
         initComponents();
     }
@@ -48,6 +54,10 @@ public class YouLoose extends javax.swing.JFrame {
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
         // TODO add your handling code here:
+        dunia = new HomeBase(dunia.monsterChest);
+        HomeBaseGUI rumah = new HomeBaseGUI(dunia, player);
+        rumah.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     /**

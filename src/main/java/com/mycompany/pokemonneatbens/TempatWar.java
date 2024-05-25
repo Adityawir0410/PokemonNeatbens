@@ -238,13 +238,14 @@ public class TempatWar extends javax.swing.JFrame {
         jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
         jLabel5.setText(Integer.toString(wildMonster.hp));
         DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        YouLoose kalah = new YouLoose(dunia, player);
         int damageMusuh = healthAwalPlayer - player.playerMonster.get(monsterPlayer).hp;
         int damagePlayer = healthAwalMusuh - wildMonster.hp;
         jLabel6.setText("Player Melakukan " + Integer.toString(damagePlayer) + " Musuh Melakukan " + damageMusuh);
         if (player.playerMonster.get(monsterPlayer).hp <= 0) {
             jLabel6.setText("Monster Anda kalah dalam pertarungan!");
             jLabel6.setText("Kamu Kalah");
-            dungeon.setVisible(true);
+            kalah.setVisible(true);
             setVisible(false);
         }  else if(wildMonster.getHp() <= 0){
             jLabel6.setText("Selamat! Monster Anda menang dalam pertarungan!");
@@ -263,13 +264,14 @@ public class TempatWar extends javax.swing.JFrame {
         jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
         jLabel5.setText(Integer.toString(wildMonster.hp));
         DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        YouLoose kalah = new YouLoose(dunia, player);
         int damageMusuh = healthAwalPlayer - player.playerMonster.get(monsterPlayer).hp;
         int damagePlayer = healthAwalMusuh - wildMonster.hp;
         jLabel6.setText("Player Melakukan " + Integer.toString(damagePlayer) + " Musuh Melakukan " + damageMusuh);
         if (player.playerMonster.get(monsterPlayer).getHp() <= 0) {
             jLabel6.setText("Monster Anda kalah dalam pertarungan!");
             jLabel6.setText("Kamu Kalah");
-            dungeon.setVisible(true);
+            kalah.setVisible(true);
             setVisible(false);
         }  else if(wildMonster.getHp() <= 0){
             jLabel6.setText("Selamat! Monster Anda menang dalam pertarungan!");
@@ -295,11 +297,29 @@ public class TempatWar extends javax.swing.JFrame {
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
         // TODO add your handling code here:
+        int healthAwalPlayer = player.playerMonster.get(monsterPlayer).hp;
+        int healthAwalMusuh = wildMonster.hp;
         DungeonGUI dungeon = new DungeonGUI(dunia, player);
         boolean lari = ((Dungeon)(dunia)).playerRun(player, wildMonster, monsterPlayer);
         jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
         jLabel5.setText(Integer.toString(wildMonster.hp));
         if(lari){
+            dungeon.setVisible(true);
+            setVisible(false);
+        }
+        YouLoose kalah = new YouLoose(dunia, player);
+        int damageMusuh = healthAwalPlayer - player.playerMonster.get(monsterPlayer).hp;
+        int damagePlayer = healthAwalMusuh - wildMonster.hp;
+        jLabel6.setText("Player Melakukan " + Integer.toString(damagePlayer) + " Musuh Melakukan " + damageMusuh);
+        if (player.playerMonster.get(monsterPlayer).getHp() <= 0) {
+            jLabel6.setText("Monster Anda kalah dalam pertarungan!");
+            jLabel6.setText("Kamu Kalah");
+            kalah.setVisible(true);
+            setVisible(false);
+        }  else if(wildMonster.getHp() <= 0){
+            jLabel6.setText("Selamat! Monster Anda menang dalam pertarungan!");
+            int epGained = wildMonster.getLevel() * 10; // EP yang diperoleh berdasarkan level monster liar
+            jLabel6.setText(player.playerMonster.get(monsterPlayer).getName() + " mendapatkan " + epGained + " EP.");
             dungeon.setVisible(true);
             setVisible(false);
         }
@@ -313,13 +333,14 @@ public class TempatWar extends javax.swing.JFrame {
         jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
         jLabel5.setText(Integer.toString(wildMonster.hp));
         DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        YouLoose kalah = new YouLoose(dunia, player);
         int damageMusuh = healthAwalPlayer - player.playerMonster.get(monsterPlayer).hp;
         int damagePlayer = healthAwalMusuh - wildMonster.hp;
         jLabel6.setText("Player Melakukan " + Integer.toString(damagePlayer) + " Musuh Melakukan " + damageMusuh);
         if (player.playerMonster.get(monsterPlayer).getHp() <= 0) {
             jLabel6.setText("Monster Anda kalah dalam pertarungan!");
             jLabel6.setText("Kamu Kalah");
-            dungeon.setVisible(true);
+            kalah.setVisible(true);
             setVisible(false);
         }  else if(wildMonster.getHp() <= 0){
             jLabel6.setText("Selamat! Monster Anda menang dalam pertarungan!");

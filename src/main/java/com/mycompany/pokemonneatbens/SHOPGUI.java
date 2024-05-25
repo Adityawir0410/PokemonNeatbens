@@ -113,9 +113,11 @@ public class SHOPGUI extends javax.swing.JFrame {
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
         // TODO add your handling code here:\
-        player.money -= 30;
-        player.courage.add(new Item("Attack Potion", 100, 0, 10));
-        jLabel2.setText("$"+Integer.toString(player.money));
+        if(player.money >= 30){
+            player.money -= 30;
+            player.courage.add(new Item("Attack Potion", 100, 0, 10));
+            jLabel2.setText("$"+Integer.toString(player.money));
+        }    
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn7ActionPerformed
@@ -127,16 +129,20 @@ public class SHOPGUI extends javax.swing.JFrame {
 
     private void ToUsserIn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn8ActionPerformed
         // TODO add your handling code here:
-        player.money -= 20;
-        player.okeball.add(new Item("OkeBall", 100, 0, 10));
-        jLabel2.setText("$"+Integer.toString(player.money));
+        if(player.money >= 20){
+            player.money -= 20;
+            player.okeball.add(new Item("OkeBall", 100, 0, 10));
+            jLabel2.setText("$"+Integer.toString(player.money));
+        }
     }//GEN-LAST:event_ToUsserIn8ActionPerformed
 
     private void ToUsserIn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn9ActionPerformed
         // TODO add your handling code here:
-        player.money -= 10;
-        player.health.add(new Item("Health Potion", 100, 0, 10));
-        jLabel2.setText("$"+Integer.toString(player.money));
+        if(player.money >= 10){
+            player.money -= 10;
+            player.health.add(new Item("Health Potion", 100, 0, 10));
+            jLabel2.setText("$"+Integer.toString(player.money));
+        }
     }//GEN-LAST:event_ToUsserIn9ActionPerformed
 
     /**

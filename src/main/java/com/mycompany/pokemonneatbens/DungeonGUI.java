@@ -37,7 +37,6 @@ public class DungeonGUI extends javax.swing.JFrame {
         ToUsserIn3 = new javax.swing.JButton();
         ToUsserIn4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        ToUsserIn6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,14 +76,6 @@ public class DungeonGUI extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/Dungeon.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
 
-        ToUsserIn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/HomeBase/Save.png"))); // NOI18N
-        ToUsserIn6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 910, 270, 70));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -105,16 +96,15 @@ public class DungeonGUI extends javax.swing.JFrame {
         war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
-    private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn6ActionPerformed
-
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
         // TODO add your handling code here:
+        UsserInterface balik = new UsserInterface();
+        setVisible(false);
+        balik.setVisible(true);
     }//GEN-LAST:event_ToUsserIn5ActionPerformed
 
     /**
@@ -159,7 +149,6 @@ public class DungeonGUI extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn3;
     private javax.swing.JButton ToUsserIn4;
     private javax.swing.JButton ToUsserIn5;
-    private javax.swing.JButton ToUsserIn6;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

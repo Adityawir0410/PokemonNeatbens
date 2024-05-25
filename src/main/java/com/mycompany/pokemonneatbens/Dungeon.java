@@ -227,6 +227,9 @@ public class Dungeon extends Dunia{
                 if (player.health.size() > 0) {
                     item = player.health.get(0);
                     player.playerMonster.get(index).hp += item.getEffect();
+                    if(player.playerMonster.get(index).hp > player.playerMonster.get(index).maxHp){
+                        player.playerMonster.get(index).hp = player.playerMonster.get(index).maxHp;
+                    }
                     player.health.remove(0);
                 }else{
                     System.out.println("Kamu Tidak Punya Health Potion");
@@ -247,9 +250,9 @@ public class Dungeon extends Dunia{
                     player.tangkapOkemon(wildMonster);
                     if (wildMonster.ketangkap && digunakan != 15) {
                         monsterChest.add(wildMonster);
+                        return true;
                     }
                     player.okeball.remove(0);
-                    return true;
                 }else{
                     System.out.println("Kamu Tidak Punya okeball");
                 }
