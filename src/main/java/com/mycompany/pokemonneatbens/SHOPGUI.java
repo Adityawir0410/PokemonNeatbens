@@ -27,57 +27,48 @@ public class SHOPGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         ToUsserIn2 = new javax.swing.JButton();
-        ToUsserIn5 = new javax.swing.JButton();
-        ToUsserIn3 = new javax.swing.JButton();
-        ToUsserIn4 = new javax.swing.JButton();
+        ToUsserIn8 = new javax.swing.JButton();
+        ToUsserIn9 = new javax.swing.JButton();
+        ToUsserIn7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        ToUsserIn6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ToUsserIn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/backhomebase.png"))); // NOI18N
+        ToUsserIn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Shop/attackpotion.png"))); // NOI18N
         ToUsserIn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToUsserIn2ActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 910, 270, 70));
+        getContentPane().add(ToUsserIn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 190, 50));
 
-        ToUsserIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/exit.png"))); // NOI18N
-        ToUsserIn5.addActionListener(new java.awt.event.ActionListener() {
+        ToUsserIn8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Shop/okeball.png"))); // NOI18N
+        ToUsserIn8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn5ActionPerformed(evt);
+                ToUsserIn8ActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 910, 270, 70));
+        getContentPane().add(ToUsserIn8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 460, 190, 50));
 
-        ToUsserIn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/searchingpokemon.png"))); // NOI18N
-        ToUsserIn3.addActionListener(new java.awt.event.ActionListener() {
+        ToUsserIn9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Shop/healthpotion.png"))); // NOI18N
+        ToUsserIn9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn3ActionPerformed(evt);
+                ToUsserIn9ActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 790, 440, 100));
+        getContentPane().add(ToUsserIn9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, 190, 50));
 
-        ToUsserIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/save.png"))); // NOI18N
-        ToUsserIn4.addActionListener(new java.awt.event.ActionListener() {
+        ToUsserIn7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/backhomebase.png"))); // NOI18N
+        ToUsserIn7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn4ActionPerformed(evt);
+                ToUsserIn7ActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 910, 270, 70));
+        getContentPane().add(ToUsserIn7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 900, 270, 70));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Dungeon/NEW GAME (1)/Dungeon.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Shop/Shop.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
-
-        ToUsserIn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/HomeBase/Save.png"))); // NOI18N
-        ToUsserIn6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 910, 270, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -86,21 +77,17 @@ public class SHOPGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
-    private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
+    private void ToUsserIn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn7ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn3ActionPerformed
+    }//GEN-LAST:event_ToUsserIn7ActionPerformed
 
-    private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
+    private void ToUsserIn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn6ActionPerformed
+    }//GEN-LAST:event_ToUsserIn8ActionPerformed
 
-    private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
+    private void ToUsserIn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn4ActionPerformed
-
-    private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ToUsserIn5ActionPerformed
+    }//GEN-LAST:event_ToUsserIn9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,10 +128,9 @@ public class SHOPGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ToUsserIn2;
-    private javax.swing.JButton ToUsserIn3;
-    private javax.swing.JButton ToUsserIn4;
-    private javax.swing.JButton ToUsserIn5;
-    private javax.swing.JButton ToUsserIn6;
+    private javax.swing.JButton ToUsserIn7;
+    private javax.swing.JButton ToUsserIn8;
+    private javax.swing.JButton ToUsserIn9;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
