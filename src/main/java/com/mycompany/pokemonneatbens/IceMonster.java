@@ -16,10 +16,10 @@ public class IceMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.ICE);
     }
 
-    public static IceMonster IceMonsterCollection(int index){
+    public static IceMonster IceMonsterCollection(int index, int level){
         List <IceMonster> list = new ArrayList<>();
-        list.add(new IceMonster("Krya", 1 , 100, 100, 100));
-        list.add(new IceMonster("Pagomenos", 1 , 100, 100, 100));
+        list.add(new IceMonster("Krya", level , 100, 100, 100));
+        list.add(new IceMonster("Pagomenos", level , 100, 100, 100));
 
         if (index == 0) {
             return list.get(0);

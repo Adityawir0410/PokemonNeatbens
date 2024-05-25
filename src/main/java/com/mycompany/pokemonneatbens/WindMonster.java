@@ -15,10 +15,10 @@ public class WindMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.WIND);
     }
 
-    public static WindMonster WindMonsterCollection(int index){
+    public static WindMonster WindMonsterCollection(int index, int level){
         List <WindMonster> list = new ArrayList<>();
-        list.add(new WindMonster("Anemos", 1 , 100, 100, 100));
-        list.add(new WindMonster("Ishchyroi", 1 , 100, 100, 100));
+        list.add(new WindMonster("Anemos", level , 100, 100, 100));
+        list.add(new WindMonster("Ishchyroi", level , 100, 100, 100));
 
         if (index == 0) {
             return list.get(0);

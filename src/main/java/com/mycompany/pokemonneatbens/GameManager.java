@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class GameManager {
+    public Dunia dunia;
+    public Player player;
 
     public GameManager() {
 
@@ -11,8 +13,7 @@ public class GameManager {
 
     public void StartNewGame(){
         Scanner input = new Scanner(System.in);
-        Dunia dunia = new HomeBase(null);
-        Player player;
+        dunia = new HomeBase(new ArrayList<>());
         System.out.println("Selamat Datang di Dunia Okemon");
         System.out.print("Nama: ");
         String nama = input.nextLine();
@@ -22,31 +23,29 @@ public class GameManager {
         System.out.println("3.Anemos, Elemen: Angin");
         System.out.printf("Pilihan Anda (1-3): ");
         int pilihan = 4;
-        while (pilihan > 3 && pilihan < 1) {
+        while (pilihan > 3 || pilihan < 1) {
             pilihan = input.nextInt();
             switch (pilihan) {
             case 1:
-                player = new Player(nama, null, null, null, null);
-                player.FirstOkemon(FireMonster.FireMonsterCollection(1));
+                player = new Player(nama, new ArrayList<>() , new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+                player.FirstOkemon(FireMonster.FireMonsterCollection(1,1));
                 break;
             case 2:
-                player = new Player(nama, null, null, null, null);
-                player.FirstOkemon(WaterMonster.WaterMonsterCollection(0));
+                player = new Player(nama, new ArrayList<>() , new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+                player.FirstOkemon(WaterMonster.WaterMonsterCollection(0,1));
                 break;
             case 3:
-                player = new Player(nama, null, null, null, null);
-                player.FirstOkemon(WindMonster.WindMonsterCollection(0));
+                player = new Player(nama, new ArrayList<>() , new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+                player.FirstOkemon(WindMonster.WindMonsterCollection(0,1));
                 break;
             default:
                 System.out.println("Pilihan Tidak Terdapat pilih (1-3)");
                 break;
             }
         }
-        while (true) {
-            if(dunia instanceof HomeBase){
-                
-            }
-        }
+        player.money = 100;
+        HomeBaseGUI rumah = new HomeBaseGUI(dunia, player);
+        rumah.setVisible(true);
     }
 
     

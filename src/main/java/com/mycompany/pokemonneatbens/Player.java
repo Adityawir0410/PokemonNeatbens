@@ -14,6 +14,7 @@ public class Player {
     List <Item> courage = new ArrayList<>();
     List <Item> okeball = new ArrayList<>();
     List <Monster> playerMonster = new ArrayList<>();
+    public int money;
 
     public Player(String nama, List <Item> health, List <Item> courage, List <Item> okeball, List <Monster> playerMonster){
         this.nama = nama;

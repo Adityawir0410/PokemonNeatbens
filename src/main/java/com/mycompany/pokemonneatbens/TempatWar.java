@@ -3,16 +3,122 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.pokemonneatbens;
+import javax.swing.ImageIcon;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
  * @author aditya wirz
  */
 public class TempatWar extends javax.swing.JFrame {
+    Player player;
+    Dunia dunia;
+    int monsterPlayer;
+    Monster wildMonster;
+    ImageIcon Agoni = new ImageIcon("Agoni.png");
+    ImageIcon Trachy = new ImageIcon("Trachy.png");
+    ImageIcon Fotia = new ImageIcon("Fotia.png");
+    ImageIcon Megali = new ImageIcon("Megali.png");
+    ImageIcon Krya = new ImageIcon("Krya.png");
+    ImageIcon Pagomenos = new ImageIcon("Pagomenos.png");
+    ImageIcon Naida = new ImageIcon("Naida.png");
+    ImageIcon Irupe = new ImageIcon("Irupe.png");
+    ImageIcon Anemos = new ImageIcon("Anemos.png");
+    ImageIcon Ishchyroi = new ImageIcon("Ishchyroi.png");
 
     /**
      * Creates new form UsserInterface
      */
+    public TempatWar(Player player, Dunia dunia, int index){
+        initComponents();
+        this.player = player;
+        this.dunia = dunia;
+        this.monsterPlayer = index;
+        this.wildMonster = ((Dungeon)(dunia)).generateWildMonsters(player);
+        jLabel4.setText(Integer.toString(player.playerMonster.get(index).hp));
+        jLabel5.setText(Integer.toString(wildMonster.hp));
+        if(player.playerMonster.get(index).name.equals("Agoni")){           
+            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(Agoni);
+        }
+        if(player.playerMonster.get(index).name.equals("Trachy")){
+            jLabel2.setIcon(Trachy);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+        if(player.playerMonster.get(index).name.equals("Fotia")){
+            jLabel2.setIcon(Fotia);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+        if(player.playerMonster.get(index).name.equals("Megali")){
+            jLabel2.setIcon(Megali);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+        if(player.playerMonster.get(index).name.equals("Krya")){
+            jLabel2.setIcon(Krya);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+        if(player.playerMonster.get(index).name.equals("Pagomenos")){
+            jLabel2.setIcon(Pagomenos);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+        if(player.playerMonster.get(index).name.equals("Naida")){
+            jLabel2.setIcon(Naida);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+        if(player.playerMonster.get(index).name.equals("Irupe")){
+            jLabel2.setIcon(Irupe);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+        if(player.playerMonster.get(index).name.equals("Anemos")){
+            jLabel2.setIcon(Anemos);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+        if(player.playerMonster.get(index).name.equals("Ishchyroi")){
+            jLabel2.setIcon(Ishchyroi);
+            jLabel2.setText(player.playerMonster.get(index).name);
+        }
+
+        if(wildMonster.name.equals("Agoni")){
+            jLabel3.setIcon(Agoni);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Trachy")){
+            jLabel3.setIcon(Trachy);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Fotia")){
+            jLabel3.setIcon(Fotia);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Megali")){
+            jLabel3.setIcon(Megali);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Krya")){
+            jLabel3.setIcon(Krya);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Pagomenos")){
+            jLabel3.setIcon(Pagomenos);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Naida")){
+            jLabel3.setIcon(Naida);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Irupe")){
+            jLabel3.setIcon(Irupe);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Anemos")){
+            jLabel3.setIcon(Anemos);
+            jLabel3.setText(wildMonster.name);
+        }
+        if(wildMonster.name.equals("Ishchyroi")){
+            jLabel3.setIcon(Ishchyroi);
+            jLabel3.setText(wildMonster.name);
+        }
+    }
     public TempatWar() {
         initComponents();
     }
@@ -31,6 +137,11 @@ public class TempatWar extends javax.swing.JFrame {
         ToUsserIn4 = new javax.swing.JButton();
         ToUsserIn5 = new javax.swing.JButton();
         ToUsserIn6 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,6 +187,43 @@ public class TempatWar extends javax.swing.JFrame {
         });
         getContentPane().add(ToUsserIn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 820, 300, 70));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 720, 570, -1));
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel5.setText("jLabel5");
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel5.setMaximumSize(new java.awt.Dimension(100, 100));
+        jLabel5.setMinimumSize(new java.awt.Dimension(100, 100));
+        jLabel5.setPreferredSize(new java.awt.Dimension(100, 100));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 70, 130, 30));
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel4.setText("jLabel4");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel4.setMaximumSize(new java.awt.Dimension(100, 100));
+        jLabel4.setMinimumSize(new java.awt.Dimension(100, 100));
+        jLabel4.setPreferredSize(new java.awt.Dimension(100, 100));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, 30));
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel2.setText("jLabel2");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel2.setMaximumSize(new java.awt.Dimension(100, 100));
+        jLabel2.setMinimumSize(new java.awt.Dimension(100, 100));
+        jLabel2.setPreferredSize(new java.awt.Dimension(100, 100));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 260, 250));
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel3.setText("jLabel3");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 420, 230, 280));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/TempatWar/Lobby.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
 
@@ -84,22 +232,102 @@ public class TempatWar extends javax.swing.JFrame {
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
         // TODO add your handling code here:
+        int healthAwalPlayer = player.playerMonster.get(monsterPlayer).hp;
+        int healthAwalMusuh = wildMonster.hp;
+        ((Dungeon)(dunia)).playerDoingSpecialAttack(player, wildMonster, monsterPlayer);
+        jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
+        jLabel5.setText(Integer.toString(wildMonster.hp));
+        DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        int damageMusuh = healthAwalPlayer - player.playerMonster.get(monsterPlayer).hp;
+        int damagePlayer = healthAwalMusuh - wildMonster.hp;
+        jLabel6.setText("Player Melakukan " + Integer.toString(damagePlayer) + " Musuh Melakukan " + damageMusuh);
+        if (player.playerMonster.get(monsterPlayer).hp <= 0) {
+            jLabel6.setText("Monster Anda kalah dalam pertarungan!");
+            jLabel6.setText("Kamu Kalah");
+            dungeon.setVisible(true);
+            setVisible(false);
+        }  else if(wildMonster.getHp() <= 0){
+            jLabel6.setText("Selamat! Monster Anda menang dalam pertarungan!");
+            int epGained = wildMonster.getLevel() * 10; // EP yang diperoleh berdasarkan level monster liar
+            jLabel6.setText(player.playerMonster.get(monsterPlayer).getName() + " mendapatkan " + epGained + " EP.");
+            dungeon.setVisible(true);
+            setVisible(false);
+        }
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
         // TODO add your handling code here:
+        int healthAwalPlayer = player.playerMonster.get(monsterPlayer).hp;
+        int healthAwalMusuh = wildMonster.hp;
+        ((Dungeon)(dunia)).playerDoingBasicAttack(player, wildMonster, monsterPlayer);
+        jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
+        jLabel5.setText(Integer.toString(wildMonster.hp));
+        DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        int damageMusuh = healthAwalPlayer - player.playerMonster.get(monsterPlayer).hp;
+        int damagePlayer = healthAwalMusuh - wildMonster.hp;
+        jLabel6.setText("Player Melakukan " + Integer.toString(damagePlayer) + " Musuh Melakukan " + damageMusuh);
+        if (player.playerMonster.get(monsterPlayer).getHp() <= 0) {
+            jLabel6.setText("Monster Anda kalah dalam pertarungan!");
+            jLabel6.setText("Kamu Kalah");
+            dungeon.setVisible(true);
+            setVisible(false);
+        }  else if(wildMonster.getHp() <= 0){
+            jLabel6.setText("Selamat! Monster Anda menang dalam pertarungan!");
+            int epGained = wildMonster.getLevel() * 10; // EP yang diperoleh berdasarkan level monster liar
+            jLabel6.setText(player.playerMonster.get(monsterPlayer).getName() + " mendapatkan " + epGained + " EP.");
+            dungeon.setVisible(true);
+            setVisible(false);
+        }
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
         // TODO add your handling code here:
+        DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        boolean tangkap = ((Dungeon)(dunia)).playerUseItem(player, wildMonster, monsterPlayer);
+        jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
+        jLabel5.setText(Integer.toString(wildMonster.hp));
+        if(tangkap){
+            dungeon.setVisible(true);
+            setVisible(false);
+        }
+        
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
         // TODO add your handling code here:
+        DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        boolean lari = ((Dungeon)(dunia)).playerRun(player, wildMonster, monsterPlayer);
+        jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
+        jLabel5.setText(Integer.toString(wildMonster.hp));
+        if(lari){
+            dungeon.setVisible(true);
+            setVisible(false);
+        }
     }//GEN-LAST:event_ToUsserIn5ActionPerformed
 
     private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
         // TODO add your handling code here:
+        int healthAwalPlayer = player.playerMonster.get(monsterPlayer).hp;
+        int healthAwalMusuh = wildMonster.hp;
+        ((Dungeon)(dunia)).playerDoingElementalAttack(player, wildMonster, monsterPlayer);
+        jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
+        jLabel5.setText(Integer.toString(wildMonster.hp));
+        DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        int damageMusuh = healthAwalPlayer - player.playerMonster.get(monsterPlayer).hp;
+        int damagePlayer = healthAwalMusuh - wildMonster.hp;
+        jLabel6.setText("Player Melakukan " + Integer.toString(damagePlayer) + " Musuh Melakukan " + damageMusuh);
+        if (player.playerMonster.get(monsterPlayer).getHp() <= 0) {
+            jLabel6.setText("Monster Anda kalah dalam pertarungan!");
+            jLabel6.setText("Kamu Kalah");
+            dungeon.setVisible(true);
+            setVisible(false);
+        }  else if(wildMonster.getHp() <= 0){
+            jLabel6.setText("Selamat! Monster Anda menang dalam pertarungan!");
+            int epGained = wildMonster.getLevel() * 10; // EP yang diperoleh berdasarkan level monster liar
+            jLabel6.setText(player.playerMonster.get(monsterPlayer).getName() + " mendapatkan " + epGained + " EP.");
+            dungeon.setVisible(true);
+            setVisible(false);
+        }
     }//GEN-LAST:event_ToUsserIn6ActionPerformed
 
     /**
@@ -146,5 +374,10 @@ public class TempatWar extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn5;
     private javax.swing.JButton ToUsserIn6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,10 +15,10 @@ public class WaterMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.WATER);
     }
 
-    public static WaterMonster WaterMonsterCollection(int index){
+    public static WaterMonster WaterMonsterCollection(int index, int level){
         List <WaterMonster> list = new ArrayList<>();
-        list.add(new WaterMonster("Naida", 1 , 100, 100, 100));
-        list.add(new WaterMonster("Irupe", 1 , 100, 100, 100));
+        list.add(new WaterMonster("Naida", level , 100, 100, 100));
+        list.add(new WaterMonster("Irupe", level , 100, 100, 100));
 
         if (index == 0) {
             return list.get(0);

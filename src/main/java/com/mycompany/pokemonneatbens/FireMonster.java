@@ -15,10 +15,10 @@ class FireMonster extends Monster {
         super(name, level, maxHp, hp, ep, Element.FIRE);
     }
 
-    public static FireMonster FireMonsterCollection(int index){
+    public static FireMonster FireMonsterCollection(int index, int level){
         List <FireMonster> list = new ArrayList<>();
-        list.add(new FireMonster("Fotia", 1 , 100, 100, 100));
-        list.add(new FireMonster("Megali", 1 , 100, 100, 100));
+        list.add(new FireMonster("Fotia", level , 100, 100, 100));
+        list.add(new FireMonster("Megali", level , 100, 100, 100));
 
         if (index == 0) {
             return list.get(0);

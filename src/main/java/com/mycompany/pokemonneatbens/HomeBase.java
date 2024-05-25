@@ -81,8 +81,9 @@ public class HomeBase extends Dunia{
 
         // Metode untuk evolusi monster
    public void evolveMonster(Monster monster, Element newElement) throws InvalidEvolutionException {
-       if (canEvolve(monster.getElement(), newElement)) {
+       if (canEvolve(monster.getElement(), newElement) && monster.getLevelBefore() < monster.getLevel()) {
            monster.setElement(newElement);
+           
            System.out.println(monster.getName() + " berevolusi menjadi elemen " + newElement + "!");
        } else {
            throw new InvalidEvolutionException("Evolusi tidak valid untuk elemen tersebut.");

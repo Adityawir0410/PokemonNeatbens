@@ -9,10 +9,16 @@ package com.mycompany.pokemonneatbens;
  * @author aditya wirz
  */
 public class DungeonGUI extends javax.swing.JFrame {
-
+    public Dunia dunia;
+    public Player player;
     /**
      * Creates new form UsserInterface
      */
+    public DungeonGUI(Dunia dunia, Player player){
+        this.dunia = dunia;
+        this.player = player;
+        initComponents();
+    }
     public DungeonGUI() {
         initComponents();
     }
@@ -84,10 +90,19 @@ public class DungeonGUI extends javax.swing.JFrame {
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
         // TODO add your handling code here:
+        dunia = new HomeBase(dunia.monsterChest);
+        HomeBaseGUI rumah = new HomeBaseGUI(dunia, player);
+        setVisible(false);
+        rumah.setVisible(true);
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
         // TODO add your handling code here:
+        //Searching
+        int pilihanMonster = ((Dungeon)(dunia)).startBattle(player);
+        TempatWar war = new TempatWar(player, dunia, pilihanMonster);
+        setVisible(false);
+        war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed

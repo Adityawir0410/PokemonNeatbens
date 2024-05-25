@@ -9,12 +9,18 @@ package com.mycompany.pokemonneatbens;
  * @author aditya wirz
  */
 public class HomeBaseGUI extends javax.swing.JFrame {
-
+    public Dunia dunia;
+    public Player player;
     /**
      * Creates new form UsserInterface
      */
     public HomeBaseGUI() {
         initComponents();
+    }
+    public HomeBaseGUI(Dunia dunia, Player player) {
+        initComponents();
+        this.dunia = dunia;
+        this.player = player;
     }
 
     /**
@@ -92,12 +98,13 @@ public class HomeBaseGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ToUsserInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserInActionPerformed
-        UsserInterface lobby = new UsserInterface();
-        lobby.setVisible(true);
+        ((HomeBase)dunia).healMonster(player);
     }//GEN-LAST:event_ToUsserInActionPerformed
 
     private void ToUsserIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn1ActionPerformed
         // TODO add your handling code here:
+        UsserInterface lobby = new UsserInterface();
+        lobby.setVisible(true);
     }//GEN-LAST:event_ToUsserIn1ActionPerformed
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
@@ -106,10 +113,19 @@ public class HomeBaseGUI extends javax.swing.JFrame {
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
         // TODO add your handling code here:
+        dunia = new Dungeon(dunia.monsterChest);
+        DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        setVisible(false);
+        dungeon.setVisible(true);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
         // TODO add your handling code here:
+        SHOPGUI shop = new SHOPGUI(dunia, player);
+        shop.dunia = dunia;
+        shop.player = player;
+        setVisible(false);
+        shop.setVisible(true);
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed

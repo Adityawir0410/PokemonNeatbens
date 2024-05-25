@@ -1,11 +1,12 @@
 package com.mycompany.pokemonneatbens;
 
-import com.mycompany.pokemonneatbens.MonsterAction;
 
 abstract class Monster implements MonsterAction {
     protected String name;
     protected int level;
+    protected int levelBefore;
     protected int maxHp;
+    protected int maxEp;
     protected int hp;
     protected int ep;
     protected Element element;
@@ -15,8 +16,10 @@ abstract class Monster implements MonsterAction {
     public Monster(String name, int level, int maxHp, int hp, int ep, Element element) {
         this.name = name;
         this.level = level;
-        this.maxHp = maxHp * (level * 1/4);
-        this.hp = hp;
+        this.levelBefore = level;
+        this.maxHp = maxHp + (((level-1)*100) * 1/4);
+        this.maxEp = maxHp + (((level-1)*100) * 1/4);
+        this.hp = this.maxHp;
         this.ep = ep;
         this.element = element;
         boosted = false;
@@ -42,6 +45,10 @@ abstract class Monster implements MonsterAction {
         return level;
     }
 
+    public int getLevelBefore() {
+        return levelBefore;
+    }
+
     public int getMaxHp() {
         return maxHp;
     }
@@ -64,6 +71,11 @@ abstract class Monster implements MonsterAction {
 
     public void setEp(int ep) {
         this.ep = ep;
+        if(this.ep >= maxEp){
+            this.level++;
+            this.maxHp = maxHp + (((level-1)*100) * 1/4);
+            this.maxEp = maxHp + (((level-1)*100) * 1/4);
+        }
     }
 
     public void setElement(Element element) {

@@ -9,12 +9,21 @@ package com.mycompany.pokemonneatbens;
  * @author aditya wirz
  */
 public class SHOPGUI extends javax.swing.JFrame {
+    public Dunia dunia;
+    public Player player;
 
+    public SHOPGUI(){
+        initComponents();
+    }
     /**
      * Creates new form UsserInterface
      */
-    public SHOPGUI() {
+    public SHOPGUI(Dunia dunia, Player player) {
+        //test1
         initComponents();
+        this.dunia = dunia;
+        this.player = player;
+        jLabel2.setText("$"+Integer.toString(player.money));
     }
 
     /**
@@ -26,6 +35,10 @@ public class SHOPGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         ToUsserIn2 = new javax.swing.JButton();
         ToUsserIn8 = new javax.swing.JButton();
         ToUsserIn9 = new javax.swing.JButton();
@@ -34,6 +47,30 @@ public class SHOPGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("ads");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 220, 50));
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("$20");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 220, 50));
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("$30");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 220, 50));
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("$10");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 220, 50));
 
         ToUsserIn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Shop/attackpotion.png"))); // NOI18N
         ToUsserIn2.addActionListener(new java.awt.event.ActionListener() {
@@ -67,6 +104,7 @@ public class SHOPGUI extends javax.swing.JFrame {
         });
         getContentPane().add(ToUsserIn7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 900, 270, 70));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Shop/Shop.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
 
@@ -74,19 +112,31 @@ public class SHOPGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:\
+        player.money -= 30;
+        player.courage.add(new Item("Attack Potion", 100, 0, 10));
+        jLabel2.setText("$"+Integer.toString(player.money));
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn7ActionPerformed
         // TODO add your handling code here:
+        HomeBaseGUI rumah = new HomeBaseGUI(dunia, player);
+        setVisible(false);
+        rumah.setVisible(true);
     }//GEN-LAST:event_ToUsserIn7ActionPerformed
 
     private void ToUsserIn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn8ActionPerformed
         // TODO add your handling code here:
+        player.money -= 20;
+        player.okeball.add(new Item("OkeBall", 100, 0, 10));
+        jLabel2.setText("$"+Integer.toString(player.money));
     }//GEN-LAST:event_ToUsserIn8ActionPerformed
 
     private void ToUsserIn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn9ActionPerformed
         // TODO add your handling code here:
+        player.money -= 10;
+        player.health.add(new Item("Health Potion", 100, 0, 10));
+        jLabel2.setText("$"+Integer.toString(player.money));
     }//GEN-LAST:event_ToUsserIn9ActionPerformed
 
     /**
@@ -132,5 +182,9 @@ public class SHOPGUI extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn8;
     private javax.swing.JButton ToUsserIn9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
