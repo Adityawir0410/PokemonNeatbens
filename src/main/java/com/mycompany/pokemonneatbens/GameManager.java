@@ -86,7 +86,8 @@ public class GameManager {
             List<Item> courage = new ArrayList<>();
             List<Item> okeball = new ArrayList<>();
             List<Monster> monsterPlayer = new ArrayList<>();
-            Player player = new Player("", health, courage, okeball, monsterPlayer);
+            player = new Player("", health, courage, okeball, monsterPlayer);
+            dunia = new HomeBase(new ArrayList<>());
             BufferedReader reader = new BufferedReader(new FileReader("Save Okemon.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
