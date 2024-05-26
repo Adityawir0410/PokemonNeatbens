@@ -30,25 +30,13 @@ public class HomeBase extends Dunia{
         return new Dungeon(super.monsterChest);
     }
 
-    private boolean canEvolve(Element currentElement, Element newElement) {
-        // Implementasi aturan evolusi elemen monster
-        switch (currentElement) {
-            case FIRE:
-                return newElement == Element.WIND || newElement == Element.EARTH;
-            case WIND:
-                return newElement == Element.FIRE || newElement == Element.WATER;
-            case WATER:
-                return newElement == Element.GRASS || newElement == Element.ICE;
-            case ICE:
-                return newElement == Element.WIND || newElement == Element.WATER;
-            case EARTH:
-                return newElement == Element.FIRE || newElement == Element.GRASS;
-            case GRASS:
-                return newElement == Element.EARTH || newElement == Element.WATER;
-            default:
-                return false;
-        }
-    }
+    // private boolean canEvolve(Monster monster) {
+    //     if (monster.evolved) {
+    //         return false;
+    //     }else{
+    //         return true;
+    //     }
+    // }
 
     public void Shop(Player player){
         Scanner input = new Scanner(System.in);
@@ -79,14 +67,84 @@ public class HomeBase extends Dunia{
         }
     }
 
-        // Metode untuk evolusi monster
-   public void evolveMonster(Monster monster, Element newElement) throws InvalidEvolutionException {
-       if (canEvolve(monster.getElement(), newElement) && monster.getLevelBefore() < monster.getLevel()) {
-           monster.setElement(newElement);
-           
-           System.out.println(monster.getName() + " berevolusi menjadi elemen " + newElement + "!");
-       } else {
-           throw new InvalidEvolutionException("Evolusi tidak valid untuk elemen tersebut.");
+   public void evolveMonster(Monster monster) throws InvalidEvolutionException {
+       Scanner sc = new Scanner(System.in);
+        if (monster.evolved) {
+            System.out.println("Monster Sudah di Evolve di level ini");
+       }else{
+            switch (monster.element) {
+                case FIRE:
+                    System.out.println("Evolve ke Elemen apa \n 1. Angin \n 2. Tanah" );
+                    switch (sc.nextInt()) {
+                        case 1:
+                            monster.element = Element.WIND;
+                            break;
+                        case 2:
+                            monster.element = Element.EARTH;
+                            break;
+                        default:
+                            throw new InvalidEvolutionException("Invalid Elemen");
+                    }
+                    break;
+                case WIND:
+                    System.out.println("Evolve ke Elemen apa \n 1. Api \n 2. Air" );
+                    switch (sc.nextInt()) {
+                        case 1:
+                            monster.element = Element.FIRE;
+                            break;
+                        case 2:
+                            monster.element = Element.WATER;
+                            break;
+                        default:
+                            throw new InvalidEvolutionException("Invalid Elemen");
+                    }
+                    break;
+                case WATER:
+                    System.out.println("Evolve ke Elemen apa \n 1. Angin \n 2. Es" );
+                    switch (sc.nextInt()) {
+                        case 1:
+                            monster.element = Element.WIND;
+                            break;
+                        case 2:
+                            monster.element = Element.ICE;
+                            break;
+                        default:
+                            throw new InvalidEvolutionException("Invalid Elemen");
+                    }
+                    break;
+                case ICE:
+                    System.out.println("Evolve ke Elemen apa \n 1. Air \n 2. Tanah" );
+                    switch (sc.nextInt()) {
+                        case 1:
+                            monster.element = Element.WATER;
+                            break;
+                        case 2:
+                            monster.element = Element.EARTH;
+                            break;
+                        default:
+                            throw new InvalidEvolutionException("Invalid Elemen");
+                    }
+                    break;
+                case EARTH:
+                    System.out.println("Evolve ke Elemen apa \n 1. Api \n 2. Es" );
+                    switch (sc.nextInt()) {
+                        case 1:
+                            monster.element = Element.FIRE;
+                            break;
+                        case 2:
+                            monster.element = Element.ICE;
+                            break;
+                        default:
+                            throw new InvalidEvolutionException("Invalid Elemen");
+                    }
+                    break;
+            
+                default:
+                    break;
+            }
+
+            monster.evolved = true;
+            sc.close();
        }
    }
     

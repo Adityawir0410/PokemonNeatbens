@@ -1,4 +1,6 @@
 package com.mycompany.pokemonneatbens;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -51,7 +53,54 @@ public class GameManager {
     
 
     // Metode untuk menyimpan progres game ke file teks
-    public void saveProgress() {
-       
+    public void saveProgress(Player player) {
+        try {
+            FileWriter writer = new FileWriter("Save Okemon.txt");
+            writer.write("Player Name: " + player.nama + "\n");
+            writer.write("Player Money: " + player.money + "\n");
+            writer.write("\n");
+            writer.write("Health Potions: " + player.health.size() + "\n");
+            writer.write("Courage Potions: " + player.courage.size() + "\n");
+            writer.write("Okeball: " + player.okeball.size() + "\n");
+            writer.write("\n");
+            writer.write("Player Monster: " + player + "\n");
+            for (int i = 0; i < player.playerMonster.size(); i++) {
+                Monster temp = player.playerMonster.get(i);
+                writer.write("Monster ke-" + i +  " " + temp.name + " " + temp.ep + " " + temp.hp + " " + temp.boosted + " " + temp.evolved);
+            }
+            writer.close();
+            System.out.println("Progres berhasil disimpan ke progress.txt");
+        } catch (IOException e) {
+            System.out.println("Gagal menyimpan progres: " + e.getMessage());
+        }
+    }
+
+    public Player loadProgress() {
+        try {
+            Player player = new Player(null, null, null, null, null);
+            BufferedReader reader = new BufferedReader(new FileReader("Save Okemon.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.startsWith("Player Name: ")) {
+                    player.nama = line.substring("Player Name: ".length());
+                } else if (line.startsWith("Player Money: ")) {
+                    player.money = Integer.parseInt(line.substring("Player Money: ".length()));
+                } else if (line.equals("Health Potions: ")) {
+                    // Baca informasi item (Health Potions, Courage Potions, Okeball)
+                    // dan tambahkan ke koleksi item pemain
+                    // ...
+                } else if (line.equals("Player Monster: ")) {
+                    // Baca informasi monster (nama, ep, hp, boosted, evolved)
+                    // dan tambahkan ke koleksi monster pemain
+                    // ...
+                }
+            }
+            reader.close();
+            System.out.println("Progres berhasil dimuat dari Save Okemon.txt");
+            return player;
+        } catch (IOException e) {
+            System.out.println("Gagal memuat progres: " + e.getMessage());
+            return null;
+        }
     }
 }
