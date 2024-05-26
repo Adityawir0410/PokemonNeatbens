@@ -77,7 +77,11 @@ public class GameManager {
 
     public Player loadProgress() {
         try {
-            Player player = new Player(null, null, null, null, null);
+            List<Item> health = new ArrayList<>();
+            List<Item> courage = new ArrayList<>();
+            List<Item> okeball = new ArrayList<>();
+            List<Monster> monsterPlayer = new ArrayList<>();
+            Player player = new Player(null, health, courage, okeball, monsterPlayer);
             BufferedReader reader = new BufferedReader(new FileReader("Save Okemon.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
@@ -88,17 +92,17 @@ public class GameManager {
                 } else if (line.equals("Health Potions: ")) {
                     int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
                     for (int i = 0; i < jumlah; i++) {
-                        player.health.add(new Item("Health Potion", 100, 0, 10));
+                        health.add(new Item("Health Potion", 100, 0, 10));
                     }
                 } else if (line.equals("Courage Potions: ")) {
                     int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
                     for (int i = 0; i < jumlah; i++) {
-                        player.courage.add(new Item("Attack Potion", 0, 0, 50));                    
+                        courage.add(new Item("Attack Potion", 0, 0, 50));                    
                     }
                 }else if (line.equals("Okeball : ")) {
                     int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
                     for (int i = 0; i < jumlah; i++) {
-                        player.okeball.add(new Item("OkeBall", 100, 0, 15));
+                        okeball.add(new Item("OkeBall", 100, 0, 15));
                     }
                 }else if (line.equals("Monster : ")) {
                     String full = line.substring(9);
@@ -139,7 +143,7 @@ public class GameManager {
                     }else{
                         monster.boosted = false;
                     }
-                    player.playerMonster.add(monster);
+                    monsterPlayer.add(monster);
                 }
             }
             reader.close();
