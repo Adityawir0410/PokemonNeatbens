@@ -68,6 +68,11 @@ public class GameManager {
                 Monster temp = player.playerMonster.get(i);
                 writer.write("Monster " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted);
             }
+            writer.write("Monster Chest: ");
+            for (int i = 0; i < dunia.monsterChest.size(); i++) {
+                Monster temp = dunia.monsterChest.get(i);
+                writer.write("Monster Chest " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted);
+            }
             writer.close();
             System.out.println("Progres berhasil disimpan ke progress.txt");
         } catch (IOException e) {
@@ -144,6 +149,46 @@ public class GameManager {
                         monster.boosted = false;
                     }
                     monsterPlayer.add(monster);
+                }else if (line.equals("Monster Chest : ")) {
+                    String full = line.substring(15);
+                    String [] bagian = full.split(" ");
+                    String nama = bagian[0];
+                    int level = Integer.parseInt(bagian[1]);
+                    int maxHp = Integer.parseInt(bagian[2]);
+                    int hp = Integer.parseInt(bagian[3]);
+                    int ep = Integer.parseInt(bagian[4]);
+                    Monster monster = null;
+                    switch (bagian[5]) {
+                        case "FIRE":
+                            monster = new FireMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        case "WATER":
+                            monster = new WaterMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        case "WIND":
+                            monster = new WindMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        case "ICE":
+                            monster = new IceMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        case "Earth":
+                            monster = new EarthMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        default:
+                            break;
+                    }
+                    if (bagian[6].equalsIgnoreCase("true")) {
+                        monster.evolved = true;
+                    }else{
+                        monster.evolved = false;
+                    }
+
+                    if (bagian[7].equalsIgnoreCase("true")) {
+                        monster.boosted = true;
+                    }else{
+                        monster.boosted = false;
+                    }
+                    dunia.monsterChest.add(monster);
                 }
             }
             reader.close();
