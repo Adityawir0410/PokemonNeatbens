@@ -67,8 +67,33 @@ public class HomeBase extends Dunia{
         }
     }
 
-   public void evolveMonster(Monster monster) throws InvalidEvolutionException {
+   public void evolveMonster(Player player) throws InvalidEvolutionException {
        Scanner sc = new Scanner(System.in);
+       Monster monster = null;
+       int index = 0;
+       System.out.println("Pilih Monster yang di Evolve: ");
+       for (int i = 0; i < player.playerMonster.size(); i++) {
+            monster = player.playerMonster.get(i);    
+            System.out.println((i+1) + ". " + monster.name);
+       }
+       switch (sc.nextInt()) {
+        case 1:
+            monster = player.playerMonster.get(0);
+            index = 0;
+            break;
+        case 2:
+            monster = player.playerMonster.get(1);
+            index = 1;
+            break;
+        case 3:
+            monster = player.playerMonster.get(2);
+            index = 2;
+            break;
+       
+        default:
+            break;
+       }
+
         if (monster.evolved) {
             System.out.println("Monster Sudah di Evolve di level ini");
        }else{
@@ -78,11 +103,16 @@ public class HomeBase extends Dunia{
                     switch (sc.nextInt()) {
                         case 1:
                             monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                             break;
                         case 2:
                             monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                             break;
                         default:
+                            sc.close();
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
@@ -91,11 +121,16 @@ public class HomeBase extends Dunia{
                     switch (sc.nextInt()) {
                         case 1:
                             monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                             break;
                         case 2:
                             monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                             break;
                         default:
+                            sc.close();
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
@@ -104,11 +139,16 @@ public class HomeBase extends Dunia{
                     switch (sc.nextInt()) {
                         case 1:
                             monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                             break;
                         case 2:
                             monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                             break;
                         default:
+                        sc.close();
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
@@ -117,11 +157,16 @@ public class HomeBase extends Dunia{
                     switch (sc.nextInt()) {
                         case 1:
                             monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                         break;
                         case 2:
                             monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                         break;
                         default:
+                        sc.close();
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
@@ -130,11 +175,16 @@ public class HomeBase extends Dunia{
                     switch (sc.nextInt()) {
                         case 1:
                             monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                         break;
                         case 2:
                             monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                            player.playerMonster.add(index,monster);
+                            player.playerMonster.remove(index + 1);
                         break;
                         default:
+                        sc.close();
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
@@ -142,7 +192,7 @@ public class HomeBase extends Dunia{
                 default:
                     break;
             }
-
+            System.out.println("Monster Berhasil di Evolve");
             monster.evolved = true;
             sc.close();
        }

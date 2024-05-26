@@ -139,7 +139,11 @@ public class HomeBaseGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
-        // TODO add your handling code here:
+        HomeBase hb = new HomeBase(dunia.monsterChest);
+        try {
+            hb.evolveMonster(player);
+        } catch (InvalidEvolutionException e) {
+        }
     }//GEN-LAST:event_ToUsserIn5ActionPerformed
 
     private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
