@@ -68,7 +68,7 @@ public class GameManager {
                 Monster temp = player.playerMonster.get(i);
                 writer.write("Monster " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted);
             }
-            writer.write("Monster Chest: ");
+            writer.write("Monster Chest List: ");
             for (int i = 0; i < dunia.monsterChest.size(); i++) {
                 Monster temp = dunia.monsterChest.get(i);
                 writer.write("Monster Chest " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted);
