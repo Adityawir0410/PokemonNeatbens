@@ -125,10 +125,20 @@ public class GameManager {
                         case "Earth":
                             monster = new EarthMonster(nama, level, maxHp, hp, ep);
                             break;
-                    
                         default:
                             break;
-                    }                    
+                    }
+                    if (bagian[6].equalsIgnoreCase("true")) {
+                        monster.evolved = true;
+                    }else{
+                        monster.evolved = false;
+                    }
+
+                    if (bagian[7].equalsIgnoreCase("true")) {
+                        monster.boosted = true;
+                    }else{
+                        monster.boosted = false;
+                    }
                     player.playerMonster.add(monster);
                 }
             }
