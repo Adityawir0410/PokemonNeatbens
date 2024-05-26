@@ -76,7 +76,8 @@ public class HomeBase extends Dunia{
             monster = player.playerMonster.get(i);    
             System.out.println((i+1) + ". " + monster.name);
        }
-       switch (sc.nextInt()) {
+       int pilihan = sc.nextInt();
+       switch (pilihan) {
         case 1:
             monster = player.playerMonster.get(0);
             index = 0;
@@ -194,7 +195,6 @@ public class HomeBase extends Dunia{
             }
             System.out.println("Monster Berhasil di Evolve");
             monster.evolved = true;
-            sc.close();
        }
    }
     
