@@ -1,0 +1,12 @@
+Player Name: afsd1
+Player Money: 0
+
+Health Potions: 0
+Courage Potions: 0
+Okeball: 4
+
+Player Monster: 
+Monster Megali 1 100 88 100 FIRE false false
+
+Monster Chest List: 
+Monster Chest Anemos 1 100 85 100 WIND false false

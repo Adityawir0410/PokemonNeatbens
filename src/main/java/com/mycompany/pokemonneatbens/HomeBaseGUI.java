@@ -114,6 +114,7 @@ public class HomeBaseGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         UsserInterface lobby = new UsserInterface();
         lobby.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_ToUsserIn1ActionPerformed
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
@@ -123,10 +124,7 @@ public class HomeBaseGUI extends javax.swing.JFrame {
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
         // TODO add your handling code here:
-        dunia = new Dungeon(dunia.monsterChest);
-        DungeonGUI dungeon = new DungeonGUI(dunia, player);
-        setVisible(false);
-        dungeon.setVisible(true);
+        ((HomeBase)(dunia)).bukaChestMonster(player, dunia);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
@@ -147,6 +145,10 @@ public class HomeBaseGUI extends javax.swing.JFrame {
 
     private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
         // TODO add your handling code here:
+        dunia = new Dungeon(dunia.monsterChest);
+        DungeonGUI dungeon = new DungeonGUI(dunia, player);
+        setVisible(false);
+        dungeon.setVisible(true);
     }//GEN-LAST:event_ToUsserIn6ActionPerformed
 
     /**

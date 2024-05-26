@@ -65,8 +65,9 @@ public class UsserInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void toLoadGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toLoadGameActionPerformed
-    LoadGame iniLoad = new LoadGame();
-    iniLoad.setVisible(true);
+        GameManager loadGame = new GameManager();
+        loadGame.loadProgress();
+        setVisible(false);
     // TODO add your handling code here:
     }//GEN-LAST:event_toLoadGameActionPerformed
 

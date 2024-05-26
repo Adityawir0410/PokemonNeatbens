@@ -6,7 +6,7 @@ public abstract class Dunia {
     public List<Monster> monsterChest = new ArrayList<>(); 
     public int digunakan;
     public Dunia(List<Monster> monsterChest){
-        monsterChest = this.monsterChest;
+        this.monsterChest = monsterChest;
         digunakan = 0;
     }
     public abstract HomeBase GoToHomeBase();

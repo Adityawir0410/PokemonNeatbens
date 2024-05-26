@@ -197,7 +197,40 @@ public class HomeBase extends Dunia{
             monster.evolved = true;
        }
    }
-    
+   
+   public void bukaChestMonster(Player player, Dunia dunia){
+        Scanner input = new Scanner(System.in);
+        for(int i = 1; i <= dunia.monsterChest.size(); i++){
+            System.out.println(i + ". " + dunia.monsterChest.get(i-1).name + " Level: " + dunia.monsterChest.get(i-1).level + " Elemen: " + dunia.monsterChest.get(i-1).element);
+        }
+        System.out.println("Apakah kamu ingin mengambil Okemon dari chest untuk kamu bawa?");
+        System.out.printf("Pilih Okemon sesuai no urut nya jika tidak ingin mengambil pilih 0: ");
+        int pilihan = input.nextInt();
+        if(pilihan-1 != -1 && pilihan <= dunia.monsterChest.size()){
+            if(player.playerMonster.size() < 3){
+                player.playerMonster.add(dunia.monsterChest.get(pilihan-1));
+            }else{
+                System.out.println("Monster yang ada di tas kamu penuh pilih monster untuk dikeluarkan");
+                for(int i = 1; i <= player.playerMonster.size(); i++){
+                    System.out.println(i + ". " + player.playerMonster.get(i-1).name + " Level: " + player.playerMonster.get(i-1).level + " Elemen: " + player.playerMonster.get(i-1).element);
+                }
+                System.out.print("Pilih berdasarkan no urut: ");
+                int pilihanKeluar = input.nextInt();
+                while (pilihanKeluar-1 > 3 && pilihanKeluar-1 < 0) {
+                    System.out.println("No urut tidak tersedia coba lagi: ");
+                    pilihanKeluar = input.nextInt();
+                }
+                System.out.println(player.playerMonster.get(pilihanKeluar-1).name + " dimasukkan ke chest rumah");
+                dunia.monsterChest.add(player.playerMonster.get(pilihanKeluar-1));
+                player.playerMonster.remove(pilihanKeluar-1);
+                player.playerMonster.add(dunia.monsterChest.get(pilihan-1));
+            }
+            dunia.monsterChest.remove(pilihan-1);
+            System.out.println(player.playerMonster.get(player.playerMonster.size()-1).name+ " berhasil ditambahkan");
+        }else{
+            System.out.println("Gagal menambahkan Okemon");
+        }
+   }
     
 }
 class InvalidEvolutionException extends Exception {

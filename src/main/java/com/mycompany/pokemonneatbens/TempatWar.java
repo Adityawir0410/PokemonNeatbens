@@ -4,7 +4,12 @@
  */
 package com.mycompany.pokemonneatbens;
 import javax.swing.ImageIcon;
-import java.util.concurrent.TimeUnit;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -38,85 +43,85 @@ public class TempatWar extends javax.swing.JFrame {
         jLabel4.setText(Integer.toString(player.playerMonster.get(index).hp));
         jLabel5.setText(Integer.toString(wildMonster.hp));
         if(player.playerMonster.get(index).name.equals("Agoni")){           
-            jLabel2.setText(player.playerMonster.get(index).name);
-            jLabel2.setIcon(Agoni);
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
         }
         if(player.playerMonster.get(index).name.equals("Trachy")){
-            jLabel2.setIcon(Trachy);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
         if(player.playerMonster.get(index).name.equals("Fotia")){
-            jLabel2.setIcon(Fotia);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
         if(player.playerMonster.get(index).name.equals("Megali")){
-            jLabel2.setIcon(Megali);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
         if(player.playerMonster.get(index).name.equals("Krya")){
-            jLabel2.setIcon(Krya);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
         if(player.playerMonster.get(index).name.equals("Pagomenos")){
-            jLabel2.setIcon(Pagomenos);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
         if(player.playerMonster.get(index).name.equals("Naida")){
-            jLabel2.setIcon(Naida);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
         if(player.playerMonster.get(index).name.equals("Irupe")){
-            jLabel2.setIcon(Irupe);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
         if(player.playerMonster.get(index).name.equals("Anemos")){
-            jLabel2.setIcon(Anemos);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
         if(player.playerMonster.get(index).name.equals("Ishchyroi")){
-            jLabel2.setIcon(Ishchyroi);
-            jLabel2.setText(player.playerMonster.get(index).name);
+            jLabel2.setIcon(new MirrorImageIcon(player.playerMonster.get(index).name + ".png"));
+            jLabel7.setText(player.playerMonster.get(index).name + " " + Integer.toString(player.playerMonster.get(index).level));
         }
 
         if(wildMonster.name.equals("Agoni")){
             jLabel3.setIcon(Agoni);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Trachy")){
             jLabel3.setIcon(Trachy);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Fotia")){
             jLabel3.setIcon(Fotia);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Megali")){
             jLabel3.setIcon(Megali);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Krya")){
             jLabel3.setIcon(Krya);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Pagomenos")){
             jLabel3.setIcon(Pagomenos);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Naida")){
             jLabel3.setIcon(Naida);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Irupe")){
             jLabel3.setIcon(Irupe);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Anemos")){
             jLabel3.setIcon(Anemos);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
         if(wildMonster.name.equals("Ishchyroi")){
             jLabel3.setIcon(Ishchyroi);
-            jLabel3.setText(wildMonster.name);
+            jLabel8.setText(wildMonster.name + " " + Integer.toString(wildMonster.level));
         }
     }
     public TempatWar() {
@@ -140,7 +145,9 @@ public class TempatWar extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -188,7 +195,6 @@ public class TempatWar extends javax.swing.JFrame {
         getContentPane().add(ToUsserIn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 820, 300, 70));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 720, 570, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
@@ -209,8 +215,16 @@ public class TempatWar extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(100, 100));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, 30));
 
+        jLabel7.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel7.setText("jLabel7");
+        jLabel7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel7.setMaximumSize(new java.awt.Dimension(100, 100));
+        jLabel7.setMinimumSize(new java.awt.Dimension(100, 100));
+        jLabel7.setPreferredSize(new java.awt.Dimension(100, 100));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 260, 250));
+
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel2.setText("jLabel2");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -218,11 +232,16 @@ public class TempatWar extends javax.swing.JFrame {
         jLabel2.setPreferredSize(new java.awt.Dimension(100, 100));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 260, 250));
 
+        jLabel8.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel8.setText("jLabel8");
+        jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 370, 230, 280));
+
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel3.setText("jLabel3");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 420, 230, 280));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, 230, 280));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/TempatWar/Lobby.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
@@ -284,8 +303,9 @@ public class TempatWar extends javax.swing.JFrame {
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
         // TODO add your handling code here:
+        boolean tangkap = ((Dungeon)(dunia)).playerUseItem(player, wildMonster, monsterPlayer, dunia);
+        System.out.println(dunia.monsterChest.size());
         DungeonGUI dungeon = new DungeonGUI(dunia, player);
-        boolean tangkap = ((Dungeon)(dunia)).playerUseItem(player, wildMonster, monsterPlayer);
         jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
         jLabel5.setText(Integer.toString(wildMonster.hp));
         if(tangkap){
@@ -400,5 +420,23 @@ public class TempatWar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
+}
+
+class MirrorImageIcon extends ImageIcon {
+
+    public MirrorImageIcon(String filename) {
+        super(filename);
+    }
+
+    @Override
+    public synchronized void paintIcon(Component c, Graphics g, int x, int y) {
+        Graphics2D g2 = (Graphics2D)g.create();
+        g2.translate(getIconWidth(), 0);
+        g2.scale(-1, 1);
+        super.paintIcon(c, g2, x, y);
+    }
+
 }

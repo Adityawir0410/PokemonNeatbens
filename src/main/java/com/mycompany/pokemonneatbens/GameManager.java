@@ -196,6 +196,8 @@ public class GameManager {
             }
             reader.close();
             System.out.println("Progres berhasil dimuat dari Save Okemon.txt");
+            HomeBaseGUI rumah = new HomeBaseGUI(dunia, player);
+            rumah.setVisible(true);
             return player;
         } catch (IOException e) {
             System.out.println("Gagal memuat progres: " + e.getMessage());

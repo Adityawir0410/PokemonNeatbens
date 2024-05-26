@@ -82,10 +82,10 @@ public class Dungeon extends Dunia{
         }else if(player.playerMonster.size() == 2){
             pilihan = scanner.nextInt();
             switch (pilihan) {
-                case 1:
+                case 0:
                 playerMonster = player.playerMonster.get(0);
                     break;
-                case 2:
+                case 1:
                 playerMonster = player.playerMonster.get(1);
                     break;
                 default:
@@ -95,13 +95,13 @@ public class Dungeon extends Dunia{
         }else {
             pilihan = scanner.nextInt();
             switch (pilihan) {
-                case 1:
+                case 0:
                     playerMonster = player.playerMonster.get(0);
                     break;
-                case 2:
+                case 1:
                     playerMonster = player.playerMonster.get(1);
                     break;
-                case 3:
+                case 2:
                     playerMonster = player.playerMonster.get(2);
                     break;
                 default:
@@ -217,7 +217,7 @@ public class Dungeon extends Dunia{
         }
         return false;
     }
-    public boolean playerUseItem(Player player, Monster wildMonster, int index){
+    public boolean playerUseItem(Player player, Monster wildMonster, int index, Dunia dunia){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Masukkan item yang ingin digunakan:");
         System.out.println("1. Health Potion \n2. Attack Potion\n3. OkeBall");
@@ -246,10 +246,10 @@ public class Dungeon extends Dunia{
                 break;
             case 3:
                 if (player.okeball.size() > 0) {
-                    item = player.courage.get(0);
+                    item = player.okeball.get(0);
                     player.tangkapOkemon(wildMonster);
                     if (wildMonster.ketangkap && digunakan != 15) {
-                        monsterChest.add(wildMonster);
+                        dunia.monsterChest.add(wildMonster);
                         return true;
                     }
                     player.okeball.remove(0);
