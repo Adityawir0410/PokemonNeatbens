@@ -118,7 +118,7 @@ public class HomeBaseGUI extends javax.swing.JFrame {
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
         GameManager gm = new GameManager();
-        gm.saveProgress(player);
+        gm.saveProgress(player,dunia);
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed

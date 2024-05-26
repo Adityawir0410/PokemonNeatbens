@@ -77,10 +77,10 @@ public class HomeBase extends Dunia{
                     System.out.println("Evolve ke Elemen apa \n 1. Angin \n 2. Tanah" );
                     switch (sc.nextInt()) {
                         case 1:
-                            monster.element = Element.WIND;
+                            monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
                             break;
                         case 2:
-                            monster.element = Element.EARTH;
+                            monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
                             break;
                         default:
                             throw new InvalidEvolutionException("Invalid Elemen");
@@ -90,10 +90,10 @@ public class HomeBase extends Dunia{
                     System.out.println("Evolve ke Elemen apa \n 1. Api \n 2. Air" );
                     switch (sc.nextInt()) {
                         case 1:
-                            monster.element = Element.FIRE;
+                            monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
                             break;
                         case 2:
-                            monster.element = Element.WATER;
+                            monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
                             break;
                         default:
                             throw new InvalidEvolutionException("Invalid Elemen");
@@ -103,10 +103,10 @@ public class HomeBase extends Dunia{
                     System.out.println("Evolve ke Elemen apa \n 1. Angin \n 2. Es" );
                     switch (sc.nextInt()) {
                         case 1:
-                            monster.element = Element.WIND;
+                            monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
                             break;
                         case 2:
-                            monster.element = Element.ICE;
+                            monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
                             break;
                         default:
                             throw new InvalidEvolutionException("Invalid Elemen");
@@ -116,11 +116,11 @@ public class HomeBase extends Dunia{
                     System.out.println("Evolve ke Elemen apa \n 1. Air \n 2. Tanah" );
                     switch (sc.nextInt()) {
                         case 1:
-                            monster.element = Element.WATER;
-                            break;
+                            monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                        break;
                         case 2:
-                            monster.element = Element.EARTH;
-                            break;
+                            monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                        break;
                         default:
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
@@ -129,11 +129,11 @@ public class HomeBase extends Dunia{
                     System.out.println("Evolve ke Elemen apa \n 1. Api \n 2. Es" );
                     switch (sc.nextInt()) {
                         case 1:
-                            monster.element = Element.FIRE;
-                            break;
+                            monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                        break;
                         case 2:
-                            monster.element = Element.ICE;
-                            break;
+                            monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                        break;
                         default:
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
