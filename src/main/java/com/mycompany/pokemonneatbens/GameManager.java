@@ -63,10 +63,10 @@ public class GameManager {
             writer.write("Courage Potions: " + player.courage.size() + "\n");
             writer.write("Okeball: " + player.okeball.size() + "\n");
             writer.write("\n");
-            writer.write("Player Monster: " + player + "\n");
+            writer.write("Player Monster: \n");
             for (int i = 0; i < player.playerMonster.size(); i++) {
                 Monster temp = player.playerMonster.get(i);
-                writer.write("Monster ke-" + i +  " " + temp.name + " " + temp.ep + " " + temp.hp + " " + temp.boosted + " " + temp.evolved);
+                writer.write("Monster " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted);
             }
             writer.close();
             System.out.println("Progres berhasil disimpan ke progress.txt");
@@ -86,13 +86,50 @@ public class GameManager {
                 } else if (line.startsWith("Player Money: ")) {
                     player.money = Integer.parseInt(line.substring("Player Money: ".length()));
                 } else if (line.equals("Health Potions: ")) {
-                    // Baca informasi item (Health Potions, Courage Potions, Okeball)
-                    // dan tambahkan ke koleksi item pemain
-                    // ...
-                } else if (line.equals("Player Monster: ")) {
-                    // Baca informasi monster (nama, ep, hp, boosted, evolved)
-                    // dan tambahkan ke koleksi monster pemain
-                    // ...
+                    int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
+                    for (int i = 0; i < jumlah; i++) {
+                        player.health.add(new Item("Health Potion", 100, 0, 10));
+                    }
+                } else if (line.equals("Courage Potions: ")) {
+                    int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
+                    for (int i = 0; i < jumlah; i++) {
+                        player.courage.add(new Item("Attack Potion", 0, 0, 50));                    
+                    }
+                }else if (line.equals("Okeball : ")) {
+                    int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
+                    for (int i = 0; i < jumlah; i++) {
+                        player.okeball.add(new Item("OkeBall", 100, 0, 15));
+                    }
+                }else if (line.equals("Monster : ")) {
+                    String full = line.substring(9);
+                    String [] bagian = full.split(" ");
+                    String nama = bagian[0];
+                    int level = Integer.parseInt(bagian[1]);
+                    int maxHp = Integer.parseInt(bagian[2]);
+                    int hp = Integer.parseInt(bagian[3]);
+                    int ep = Integer.parseInt(bagian[4]);
+                    Monster monster = null;
+                    switch (bagian[5]) {
+                        case "FIRE":
+                            monster = new FireMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        case "WATER":
+                            monster = new WaterMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        case "WIND":
+                            monster = new WindMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        case "ICE":
+                            monster = new IceMonster(nama, level, maxHp, hp, ep);
+                            break;
+                        case "Earth":
+                            monster = new EarthMonster(nama, level, maxHp, hp, ep);
+                            break;
+                    
+                        default:
+                            break;
+                    }                    
+                    player.playerMonster.add(monster);
                 }
             }
             reader.close();
