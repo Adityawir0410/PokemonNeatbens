@@ -4,6 +4,8 @@
  */
 package com.mycompany.pokemonneatbens;
 import javax.swing.ImageIcon;
+
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -39,6 +41,11 @@ public class TempatWar extends javax.swing.JFrame {
         this.player = player;
         this.dunia = dunia;
         this.monsterPlayer = index; 
+        jLabel6.setForeground(Color.WHITE);
+        jLabel7.setForeground(Color.WHITE);
+        jLabel8.setForeground(Color.WHITE);
+        jLabel4.setForeground(Color.WHITE);
+        jLabel5.setForeground(Color.WHITE);
         this.wildMonster = ((Dungeon)(dunia)).generateWildMonsters(player);
         jLabel4.setText(Integer.toString(player.playerMonster.get(index).hp));
         jLabel5.setText(Integer.toString(wildMonster.hp));
@@ -275,6 +282,11 @@ public class TempatWar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
+    public void setHp(){
+        jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
+        jLabel5.setText(Integer.toString(wildMonster.hp));
+    }
+
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
         // TODO add your handling code here:
         int healthAwalPlayer = player.playerMonster.get(monsterPlayer).hp;
@@ -305,8 +317,6 @@ public class TempatWar extends javax.swing.JFrame {
         Monster monster = player.playerMonster.get(monsterPlayer);
         LoadGame game = new LoadGame(player,monster,dunia,monsterPlayer,wildMonster);
         game.setVisible(true);
-        setVisible(false);
-        
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed

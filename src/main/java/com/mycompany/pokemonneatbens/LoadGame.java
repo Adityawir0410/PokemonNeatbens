@@ -126,38 +126,33 @@ public class LoadGame extends javax.swing.JFrame {
         if (wild.ketangkap) {
             dunia.monsterChest.add(wild);
             BerhasilTangkapMonsterGui tangkap = new BerhasilTangkapMonsterGui(dunia, player);
-            setVisible(false);
             tangkap.setVisible(true);
         }
+        player.okeball.remove(0);
+        setVisible(false);
     }//GEN-LAST:event_ToUsserIn1ActionPerformed
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
-        TempatWar war = new TempatWar(player,dunia,index);
         setVisible(false);
-        war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
-        TempatWar war = new TempatWar(player,dunia,index);
         if (player.health.size() != 0) {
-            monster.hp += 100;
-            if (monster.hp > monster.maxHp) {
-                monster.hp = monster.maxHp;
+            player.playerMonster.get(index).hp += 100;
+            if (player.playerMonster.get(index).hp > player.playerMonster.get(index).maxHp) {
+                player.playerMonster.get(index).hp = player.playerMonster.get(index).maxHp;
             }
             player.health.remove(0);
         }
         System.out.println("Berhasil menggunakan health");
         setVisible(false);
-        war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
-        TempatWar war = new TempatWar(player,dunia,index);
         if (player.courage.size() != 0) {
-            monster.boosted = true;
+            player.playerMonster.get(index).boosted = true;
             player.courage.remove(0);
             setVisible(false);
-            war.setVisible(true);
         }
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
