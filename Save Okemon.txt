@@ -1,11 +1,12 @@
-Player Name: adaw
-Player Money: 100
+Player Name: BUDI
+Player Money: 40
 
 Health Potions: 0
 Courage Potions: 0
-Okeball: 0
+Okeball: 3
 
 Player Monster: 
-Monster Megali 1 100 100 100 WIND true false
+Monster Anemos 1 100 30 100 WIND false false
 
 List: 
+Chest Pagomenos 1 100 20 100 ICE false false

@@ -9,11 +9,24 @@ package com.mycompany.pokemonneatbens;
  * @author aditya wirz
  */
 public class LoadGame extends javax.swing.JFrame {
-
+    public Player player;
+    public Monster monster;
+    public Dunia dunia;
+    public int index;
+    public Monster wild;
     /**
      * Creates new form UsserInterface
      */
     public LoadGame() {
+        initComponents();
+    }
+
+    public LoadGame(Player player, Monster monster, Dunia dunia, int index, Monster wild) {
+        this.player = player;
+        this.monster = monster;
+        this.dunia = dunia;
+        this.index = index;
+        this.wild = wild;
         initComponents();
     }
 
@@ -26,6 +39,9 @@ public class LoadGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         ToUsserIn3 = new javax.swing.JButton();
         ToUsserIn2 = new javax.swing.JButton();
         ToUsserIn1 = new javax.swing.JButton();
@@ -35,6 +51,18 @@ public class LoadGame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel3.setText(Integer.toString(player.health.size()));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 270, 50));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel2.setText(Integer.toString(player.courage.size()));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 270, 50));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel4.setText(Integer.toString(player.okeball.size()));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 600, 270, 50));
 
         ToUsserIn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemDungeon/1.png"))); // NOI18N
         ToUsserIn3.addActionListener(new java.awt.event.ActionListener() {
@@ -83,24 +111,54 @@ public class LoadGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ToUsserInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserInActionPerformed
-        UsserInterface lobby = new UsserInterface();
-        lobby.setVisible(true);
+        TempatWar war = new TempatWar(player,dunia,index);
+        war.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_ToUsserInActionPerformed
 
     private void ToUsserIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn1ActionPerformed
-        // TODO add your handling code here:
+        if (player.okeball.size() != 0) {
+            if ((wild.hp / wild.maxHp) * 100 < 25) {
+                wild.ketangkap = true;
+            }
+        }
+
+        if (wild.ketangkap) {
+            dunia.monsterChest.add(wild);
+            BerhasilTangkapMonsterGui tangkap = new BerhasilTangkapMonsterGui(dunia, player);
+            setVisible(false);
+            tangkap.setVisible(true);
+        }
     }//GEN-LAST:event_ToUsserIn1ActionPerformed
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
-        // TODO add your handling code here:
+        TempatWar war = new TempatWar(player,dunia,index);
+        setVisible(false);
+        war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
-        // TODO add your handling code here:
+        TempatWar war = new TempatWar(player,dunia,index);
+        if (player.health.size() != 0) {
+            monster.hp += 100;
+            if (monster.hp > monster.maxHp) {
+                monster.hp = monster.maxHp;
+            }
+            player.health.remove(0);
+        }
+        System.out.println("Berhasil menggunakan health");
+        setVisible(false);
+        war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
-        // TODO add your handling code here:
+        TempatWar war = new TempatWar(player,dunia,index);
+        if (player.courage.size() != 0) {
+            monster.boosted = true;
+            player.courage.remove(0);
+            setVisible(false);
+            war.setVisible(true);
+        }
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     /**
@@ -147,5 +205,8 @@ public class LoadGame extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn3;
     private javax.swing.JButton ToUsserIn4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
