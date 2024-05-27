@@ -4,16 +4,28 @@
  */
 package com.mycompany.pokemonneatbens;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author aditya wirz
  */
 public class EvolveGUI extends javax.swing.JFrame {
 
+    public Player player;
+    public Dunia dunia;
+    public Monster monster;
+    public String nama;
     /**
      * Creates new form UsserInterface
      */
     public EvolveGUI() {
+        initComponents();
+    }
+    
+    public EvolveGUI(Player player, Dunia dunia) {
+        this.player = player;
+        this.dunia = dunia;
         initComponents();
     }
 
@@ -76,6 +88,7 @@ public class EvolveGUI extends javax.swing.JFrame {
         getContentPane().add(ToUsserIn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 280, 60));
 
         ToUsserIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/NEW GAME (4).png"))); // NOI18N
+        ToUsserIn5.setVisible(false);
         ToUsserIn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToUsserIn5ActionPerformed(evt);
@@ -84,6 +97,7 @@ public class EvolveGUI extends javax.swing.JFrame {
         getContentPane().add(ToUsserIn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 560, 280, 60));
 
         ToUsserIn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/NEW GAME (4).png"))); // NOI18N
+        ToUsserIn6.setVisible(false);
         ToUsserIn6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToUsserIn6ActionPerformed(evt);
@@ -93,32 +107,43 @@ public class EvolveGUI extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("jLabel2");
+        if (player.playerMonster.size() > 1) {
+            nama = player.playerMonster.get(1).name;
+            jLabel2.setText(nama);
+        }else{
+            jLabel2.setText("KOSONG");
+        }
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 140, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("jLabel2");
+        nama = player.playerMonster.get(0).name;
+        if (player.playerMonster.size() > 2) {
+            nama = player.playerMonster.get(2).name;
+            jLabel3.setText(nama);
+        }else{
+            jLabel3.setText("KOSONG");
+        }
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, 140, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("BERHASIL EVOLVE");
+        jLabel4.setText("");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 730, 310, 50));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("jLabel2");
+        jLabel5.setText(nama);
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 140, 50));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("jLabel2");
+        jLabel6.setText("");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, 140, 50));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("jLabel2");
+        jLabel7.setText("");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 140, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/41.png"))); // NOI18N
@@ -128,27 +153,201 @@ public class EvolveGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ToUsserIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn1ActionPerformed
-        // TODO add your handling code here:
+        dunia = new HomeBase(dunia.monsterChest);
+        HomeBaseGUI rumah = new HomeBaseGUI(dunia,player);
+        setVisible(false);
+        rumah.setVisible(true);
     }//GEN-LAST:event_ToUsserIn1ActionPerformed
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
-        // TODO add your handling code here:
+        if (player.playerMonster.size() > 2) {
+            monster = player.playerMonster.get(2);
+            if (monster.evolved) {
+                jLabel4.setText("Monster Sudah Evolve di Level Ini!");
+            }else{
+                jLabel4.setText("");
+                switch (monster.element) {
+                    case FIRE:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("ANGIN");
+                        jLabel7.setText("TANAH");
+                        break;
+                    case WATER:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("ANGIN");
+                        jLabel7.setText("ES");
+                        break;
+                    case WIND:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("API");
+                        jLabel7.setText("AIR");
+                        break;
+                    case ICE:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("TANAH");
+                        jLabel7.setText("AIR");
+                        break;
+                    case EARTH:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("API");
+                        jLabel7.setText("ES");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }else{
+            jLabel4.setText("TIDAK ADA MONSTER");
+        }
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
-        // TODO add your handling code here:
+        monster = player.playerMonster.get(0);
+        if (monster.evolved) {
+            jLabel4.setText("Monster Sudah Evolve di Level Ini!");
+        }else{
+            jLabel4.setText("");
+            switch (monster.element) {
+                case FIRE:
+                    ToUsserIn5.setVisible(true);
+                    ToUsserIn6.setVisible(true);
+                    jLabel6.setText("ANGIN");
+                    jLabel7.setText("TANAH");
+                    break;
+                case WATER:
+                    ToUsserIn5.setVisible(true);
+                    ToUsserIn6.setVisible(true);
+                    jLabel6.setText("ANGIN");
+                    jLabel7.setText("ES");
+                    break;
+                case WIND:
+                    ToUsserIn5.setVisible(true);
+                    ToUsserIn6.setVisible(true);
+                    jLabel6.setText("API");
+                    jLabel7.setText("AIR");
+                    break;
+                case ICE:
+                    ToUsserIn5.setVisible(true);
+                    ToUsserIn6.setVisible(true);
+                    jLabel6.setText("TANAH");
+                    jLabel7.setText("AIR");
+                    break;
+                case EARTH:
+                    ToUsserIn5.setVisible(true);
+                    ToUsserIn6.setVisible(true);
+                    jLabel6.setText("API");
+                    jLabel7.setText("ES");
+                    break;
+                default:
+                    break;
+            }
+        }
+        
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
-        // TODO add your handling code here:
+        if (player.playerMonster.size() > 1) {
+            monster = player.playerMonster.get(1);
+            if (monster.evolved) {
+                jLabel4.setText("Monster Sudah Evolve di Level Ini!");
+            }else{
+                jLabel4.setText("");
+                switch (monster.element) {
+                    case FIRE:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("ANGIN");
+                        jLabel7.setText("TANAH");
+                        break;
+                    case WATER:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("ANGIN");
+                        jLabel7.setText("ES");
+                        break;
+                    case WIND:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("API");
+                        jLabel7.setText("AIR");
+                        break;
+                    case ICE:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("TANAH");
+                        jLabel7.setText("AIR");
+                        break;
+                    case EARTH:
+                        ToUsserIn5.setVisible(true);
+                        ToUsserIn6.setVisible(true);
+                        jLabel6.setText("API");
+                        jLabel7.setText("ES");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }else{
+            jLabel4.setText("TIDAK ADA MONSTER!");
+        }
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
-        // TODO add your handling code here:
+        int index = player.playerMonster.indexOf(monster);
+        switch (jLabel6.getText()) {
+            case "FIRE":
+                monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            case "WIND":
+                monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            case "WATER":
+                monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            case "ICE":
+                monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            case "EARTH":
+                monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            default:
+                break;
+        }
+        player.playerMonster.add(index, monster);
+        player.playerMonster.remove(index + 1);
+        jLabel4.setText("BERHASIL EVOLVE!");
     }//GEN-LAST:event_ToUsserIn5ActionPerformed
 
     private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
-        // TODO add your handling code here:
+        int index = player.playerMonster.indexOf(monster);
+        switch (jLabel7.getText()) {
+            case "FIRE":
+                monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            case "WIND":
+                monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            case "WATER":
+                monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            case "ICE":
+                monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            case "EARTH":
+                monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                break;
+            default:
+                break;
+        }
+        player.playerMonster.add(index, monster);
+        player.playerMonster.remove(index + 1);
+        jLabel4.setText("BERHASIL EVOLVE!");
+
     }//GEN-LAST:event_ToUsserIn6ActionPerformed
 
     /**

@@ -137,10 +137,10 @@ public class HomeBaseGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
-        try {
-            ((HomeBase)(dunia)).evolveMonster(player);
-        } catch (InvalidEvolutionException e) {
-        }
+        EvolveGUI evolve = new EvolveGUI(player,dunia);
+        setVisible(false);
+        evolve.setVisible(true);
+
     }//GEN-LAST:event_ToUsserIn5ActionPerformed
 
     private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
