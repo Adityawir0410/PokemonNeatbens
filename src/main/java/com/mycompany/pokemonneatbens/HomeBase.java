@@ -95,8 +95,10 @@ public class HomeBase extends Dunia{
        }
 
         if (monster.evolved) {
-            System.out.println("Monster Sudah di Evolve di level ini");
-       }else{
+            System.out.println("Monster Sudah di Evolve di level ini !");
+       }else if(monster.level == 1){
+            System.out.println("Tidak bisa Evolve di level 1, Tingkatkan level Monstermu !");
+        }else{
             switch (monster.element) {
                 case FIRE:
                     System.out.println("Evolve ke Elemen apa \n 1. Angin \n 2. Tanah" );

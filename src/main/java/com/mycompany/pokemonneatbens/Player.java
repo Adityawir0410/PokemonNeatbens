@@ -27,10 +27,11 @@ public class Player {
         playerMonster.add(monster);
     }
     public void tangkapOkemon(Monster WildMonster){
-        if (WildMonster.hp / WildMonster.maxHp * 100 < 25) {
+        if ((WildMonster.hp / WildMonster.maxHp) * 100 < 25) {
             //ketangkap jir terus ini ditambahin ke mana gatau wkwkwkwk
             System.out.println("Kamu menangkap " + WildMonster.name);
             WildMonster.ketangkap = true;
+            WildMonster.evolved = true;
         }else{
             System.out.println(WildMonster.name + " Tidak Ketangkap");
         }
