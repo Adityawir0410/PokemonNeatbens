@@ -4,17 +4,35 @@
  */
 package com.mycompany.pokemonneatbens;
 
+import java.awt.Color;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author aditya wirz
  */
 public class IsiNamaGui extends javax.swing.JFrame {
     public Player player;
+    public Dunia dunia;
+    Monster monster = null;
+    ImageIcon Agoni = new ImageIcon("Agoni.png");
+    ImageIcon Trachy = new ImageIcon("Trachy.png");
+    ImageIcon Fotia = new ImageIcon("Fotia.png");
+    ImageIcon Megali = new ImageIcon("Megali.png");
+    ImageIcon Krya = new ImageIcon("Krya.png");
+    ImageIcon Pagomenos = new ImageIcon("Pagomenos.png");
+    ImageIcon Naida = new ImageIcon("Naida.png");
+    ImageIcon Irupe = new ImageIcon("Irupe.png");
+    ImageIcon Anemos = new ImageIcon("Anemos.png");
+    ImageIcon Ishchyroi = new ImageIcon("Ishchyroi.png");
     /**
      * Creates new form UsserInterface
      */
-    public IsiNamaGui(Player player) {
+    public IsiNamaGui(Player player, Dunia dunia) {
         this.player = player;
+        this.dunia = dunia;
         initComponents();
     }
     public IsiNamaGui(){
@@ -36,6 +54,8 @@ public class IsiNamaGui extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,8 +101,14 @@ public class IsiNamaGui extends javax.swing.JFrame {
         });
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 350, 80));
 
-        jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 340, 70));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, 230, 190));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 330, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/IsiNama/_d5c0ef46-65ee-4203-80fd-e1ad2ae962d7.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
@@ -91,25 +117,58 @@ public class IsiNamaGui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System.exit(0);
+        UsserInterface balik = new UsserInterface();
+        setVisible(false);
+        balik.setVisible(true);
         //gacor gacor
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        //Start
+        jLabel3.setForeground(Color.RED);
+        if(jTextField1.getText().isEmpty() && monster == null){
+            jLabel3.setText("Nama Kosong!!! Monster Kosong!!!");
+        }
+        else if(jTextField1.getText().isEmpty()){
+            jLabel3.setText("Nama Kosong!!!");
+        }
+        else if(monster == null){
+            jLabel3.setText("Pilih Monster!!!");
+        }else{
+            player = new Player(jTextField1.getText(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+            player.playerMonster.add(monster);
+            player.money = 100;
+            HomeBaseGUI rumah =  new HomeBaseGUI(dunia, player);
+            setVisible(false);
+            rumah.setVisible(true);
+        }    
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        // Naida
+        monster = WaterMonster.WaterMonsterCollection(0, 1);
+        jLabel2.setIcon(Naida);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
+        // Anemos
+        monster = WindMonster.WindMonsterCollection(0, 1);
+        jLabel2.setIcon(Anemos);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        //Megali
+        monster = FireMonster.FireMonsterCollection(1, 1);
+        jLabel2.setIcon(Megali);
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +214,8 @@ public class IsiNamaGui extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
