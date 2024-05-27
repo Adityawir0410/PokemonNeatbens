@@ -26,24 +26,21 @@ public class EvolveGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ToUsserIn = new javax.swing.JButton();
         ToUsserIn1 = new javax.swing.JButton();
         ToUsserIn2 = new javax.swing.JButton();
         ToUsserIn3 = new javax.swing.JButton();
         ToUsserIn4 = new javax.swing.JButton();
         ToUsserIn5 = new javax.swing.JButton();
+        ToUsserIn6 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ToUsserIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/Item.png"))); // NOI18N
-        ToUsserIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserInActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 560, 280, 60));
 
         ToUsserIn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/Back.png"))); // NOI18N
         ToUsserIn1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,24 +74,52 @@ public class EvolveGUI extends javax.swing.JFrame {
         });
         getContentPane().add(ToUsserIn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 280, 60));
 
-        ToUsserIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/Item.png"))); // NOI18N
+        ToUsserIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/NEW GAME (4).png"))); // NOI18N
         ToUsserIn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToUsserIn5ActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, 280, 60));
+        getContentPane().add(ToUsserIn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 560, 280, 60));
+
+        ToUsserIn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/NEW GAME (4).png"))); // NOI18N
+        ToUsserIn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToUsserIn6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ToUsserIn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, 280, 60));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 140, 50));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("jLabel2");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, 140, 50));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("jLabel2");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 140, 50));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("jLabel2");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 140, 50));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("jLabel2");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, 140, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/41.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ToUsserInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserInActionPerformed
-        UsserInterface lobby = new UsserInterface();
-        lobby.setVisible(true);
-    }//GEN-LAST:event_ToUsserInActionPerformed
 
     private void ToUsserIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn1ActionPerformed
         // TODO add your handling code here:
@@ -115,6 +140,10 @@ public class EvolveGUI extends javax.swing.JFrame {
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ToUsserIn5ActionPerformed
+
+    private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ToUsserIn6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,12 +183,17 @@ public class EvolveGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ToUsserIn;
     private javax.swing.JButton ToUsserIn1;
     private javax.swing.JButton ToUsserIn2;
     private javax.swing.JButton ToUsserIn3;
     private javax.swing.JButton ToUsserIn4;
     private javax.swing.JButton ToUsserIn5;
+    private javax.swing.JButton ToUsserIn6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
