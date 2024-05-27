@@ -66,14 +66,13 @@ public class GameManager {
             writer.write("Player Monster: \n");
             for (int i = 0; i < player.playerMonster.size(); i++) {
                 Monster temp = player.playerMonster.get(i);
-                writer.write("Monster " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted);
+                writer.write("Monster " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted + "\n");
             }
             writer.write("\n");
-            writer.write("\n");
-            writer.write("Monster Chest List: \n");
+            writer.write("List: \n");
             for (int i = 0; i < dunia.monsterChest.size(); i++) {
                 Monster temp = dunia.monsterChest.get(i);
-                writer.write("Monster Chest " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted);
+                writer.write("Chest " + temp.name + " " + temp.level + " "+ temp.maxHp + " " + temp.hp + " " + temp.ep + " " + temp.element + " " + temp.evolved + " " + temp.boosted + "\n");
             }
             writer.close();
             System.out.println("Progres berhasil disimpan ke progress.txt");
@@ -97,23 +96,23 @@ public class GameManager {
                     player.nama = line.substring("Player Name: ".length());
                 } else if (line.startsWith("Player Money: ")) {
                     player.money = Integer.parseInt(line.substring("Player Money: ".length()));
-                } else if (line.equals("Health Potions: ")) {
+                }else if (line.startsWith("Health Potions: ")) {
                     int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
                     for (int i = 0; i < jumlah; i++) {
-                        health.add(new Item("Health Potion", 100, 0, 10));
+                        player.health.add(new Item("Health Potion", 100, 0, 10));
                     }
-                } else if (line.equals("Courage Potions: ")) {
-                    int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
+                } else if (line.startsWith("Courage Potions: ")) {
+                    int jumlah = Integer.parseInt(line.substring("Courage Potions: ".length()));
                     for (int i = 0; i < jumlah; i++) {
-                        courage.add(new Item("Attack Potion", 0, 0, 50));                    
+                        player.courage.add(new Item("Attack Potion", 0, 0, 50));                    
                     }
-                }else if (line.equals("Okeball : ")) {
-                    int jumlah = Integer.parseInt(line.substring("Health Potions: ".length()));
+                }else if (line.startsWith("Okeball: ")) {
+                    int jumlah = Integer.parseInt(line.substring("Okeball: ".length()));
                     for (int i = 0; i < jumlah; i++) {
-                        okeball.add(new Item("OkeBall", 100, 0, 15));
+                        player.okeball.add(new Item("OkeBall", 100, 0, 15));
                     }
-                }else if (line.equals("Monster : ")) {
-                    String full = line.substring(9);
+                }else if (line.startsWith("Monster ")) {
+                    String full = line.substring(8);
                     String [] bagian = full.split(" ");
                     String nama = bagian[0];
                     int level = Integer.parseInt(bagian[1]);
@@ -151,9 +150,9 @@ public class GameManager {
                     }else{
                         monster.boosted = false;
                     }
-                    monsterPlayer.add(monster);
-                }else if (line.equals("Monster Chest : ")) {
-                    String full = line.substring(15);
+                    player.playerMonster.add(monster);
+                }else if (line.startsWith("Chest ")) {
+                    String full = line.substring(6);
                     String [] bagian = full.split(" ");
                     String nama = bagian[0];
                     int level = Integer.parseInt(bagian[1]);

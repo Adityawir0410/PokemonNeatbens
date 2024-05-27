@@ -9,11 +9,15 @@ package com.mycompany.pokemonneatbens;
  * @author aditya wirz
  */
 public class UsserInterface extends javax.swing.JFrame {
-
+    public Player player;
     /**
      * Creates new form UsserInterface
      */
-    public UsserInterface() {
+    public UsserInterface(Player player) {
+        this.player = player;
+        initComponents();
+    }
+    public UsserInterface(){
         initComponents();
     }
 
@@ -66,7 +70,7 @@ public class UsserInterface extends javax.swing.JFrame {
 
     private void toLoadGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toLoadGameActionPerformed
         GameManager loadGame = new GameManager();
-        loadGame.loadProgress();
+        player = loadGame.loadProgress();
         setVisible(false);
     // TODO add your handling code here:
     }//GEN-LAST:event_toLoadGameActionPerformed
