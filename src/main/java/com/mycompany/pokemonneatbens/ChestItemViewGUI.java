@@ -4,6 +4,8 @@
  */
 package com.mycompany.pokemonneatbens;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author aditya wirz
@@ -11,6 +13,16 @@ package com.mycompany.pokemonneatbens;
 public class ChestItemViewGUI extends javax.swing.JFrame {
     public Dunia dunia;
     public Player player;
+    ImageIcon Agoni = new ImageIcon("Agoni.png");
+    ImageIcon Trachy = new ImageIcon("Trachy.png");
+    ImageIcon Fotia = new ImageIcon("Fotia.png");
+    ImageIcon Megali = new ImageIcon("Megali.png");
+    ImageIcon Krya = new ImageIcon("Krya.png");
+    ImageIcon Pagomenos = new ImageIcon("Pagomenos.png");
+    ImageIcon Naida = new ImageIcon("Naida.png");
+    ImageIcon Irupe = new ImageIcon("Irupe.png");
+    ImageIcon Anemos = new ImageIcon("Anemos.png");
+    ImageIcon Ishchyroi = new ImageIcon("Ishchyroi.png");
 
     public ChestItemViewGUI(){
         initComponents();
@@ -23,7 +35,101 @@ public class ChestItemViewGUI extends javax.swing.JFrame {
         initComponents();
         this.dunia = dunia;
         this.player = player;
-     
+        if(player.playerMonster.get(0).name.equals("Agoni")){
+            jLabel2.setIcon(Agoni);
+        }
+        if(player.playerMonster.get(0).name.equals("Trachy")){
+            jLabel2.setIcon(Trachy);
+        }
+        if(player.playerMonster.get(0).name.equals("Fotia")){
+            jLabel2.setIcon(Fotia);
+        }
+        if(player.playerMonster.get(0).name.equals("Megali")){
+            jLabel2.setIcon(Megali);
+        }
+        if(player.playerMonster.get(0).name.equals("Krya")){
+            jLabel2.setIcon(Krya);
+        }
+        if(player.playerMonster.get(0).name.equals("Pagomenos")){
+            jLabel2.setIcon(Pagomenos);
+        }
+        if(player.playerMonster.get(0).name.equals("Naida")){
+            jLabel2.setIcon(Naida);
+        }
+        if(player.playerMonster.get(0).name.equals("Irupe")){
+            jLabel2.setIcon(Irupe);
+        }
+        if(player.playerMonster.get(0).name.equals("Anemos")){
+            jLabel2.setIcon(Anemos);
+        }
+        if(player.playerMonster.get(0).name.equals("Ishchyroi")){
+            jLabel2.setIcon(Ishchyroi);
+        }
+        //asdtgae
+        if(player.playerMonster.size() >= 2){
+            if(player.playerMonster.get(1).name.equals("Agoni")){
+                jLabel3.setIcon(Agoni);
+            }
+            if(player.playerMonster.get(1).name.equals("Trachy")){
+                jLabel3.setIcon(Trachy);
+            }
+            if(player.playerMonster.get(1).name.equals("Fotia")){
+                jLabel3.setIcon(Fotia);
+            }
+            if(player.playerMonster.get(1).name.equals("Megali")){
+                jLabel3.setIcon(Megali);
+            }
+            if(player.playerMonster.get(1).name.equals("Krya")){
+                jLabel3.setIcon(Krya);
+            }
+            if(player.playerMonster.get(1).name.equals("Pagomenos")){
+                jLabel3.setIcon(Pagomenos);
+            }
+            if(player.playerMonster.get(1).name.equals("Naida")){
+                jLabel3.setIcon(Naida);
+            }
+            if(player.playerMonster.get(1).name.equals("Irupe")){
+                jLabel3.setIcon(Irupe);
+            }
+            if(player.playerMonster.get(1).name.equals("Anemos")){
+                jLabel3.setIcon(Anemos);
+            }
+            if(player.playerMonster.get(1).name.equals("Ishchyroi")){
+                jLabel3.setIcon(Ishchyroi);
+            }
+        }
+        if(player.playerMonster.size() >= 3){
+            if(player.playerMonster.get(2).name.equals("Agoni")){
+                jLabel4.setIcon(Agoni);
+            }
+            if(player.playerMonster.get(2).name.equals("Trachy")){
+                jLabel4.setIcon(Trachy);
+            }
+            if(player.playerMonster.get(2).name.equals("Fotia")){
+                jLabel4.setIcon(Fotia);
+            }
+            if(player.playerMonster.get(2).name.equals("Megali")){
+                jLabel4.setIcon(Megali);
+            }
+            if(player.playerMonster.get(2).name.equals("Krya")){
+                jLabel4.setIcon(Krya);
+            }
+            if(player.playerMonster.get(2).name.equals("Pagomenos")){
+                jLabel4.setIcon(Pagomenos);
+            }
+            if(player.playerMonster.get(2).name.equals("Naida")){
+                jLabel4.setIcon(Naida);
+            }
+            if(player.playerMonster.get(2).name.equals("Irupe")){
+                jLabel4.setIcon(Irupe);
+            }
+            if(player.playerMonster.get(2).name.equals("Anemos")){
+                jLabel4.setIcon(Anemos);
+            }
+            if(player.playerMonster.get(2).name.equals("Ishchyroi")){
+                jLabel4.setIcon(Ishchyroi);
+            }
+        }   
     }
 
     /**
@@ -52,17 +158,8 @@ public class ChestItemViewGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 860, 260, 70));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\aditya wirz\\Documents\\GitHub\\PokemonNeatbens\\Agoni.png")); // NOI18N
-        jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 220, 240));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\aditya wirz\\Documents\\GitHub\\PokemonNeatbens\\Agoni.png")); // NOI18N
-        jLabel3.setText("jLabel2");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 220, 240));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\aditya wirz\\Documents\\GitHub\\PokemonNeatbens\\Agoni.png")); // NOI18N
-        jLabel4.setText("jLabel2");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 340, 220, 240));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
@@ -74,6 +171,9 @@ public class ChestItemViewGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        HomeBaseGUI rumah = new HomeBaseGUI(dunia, player);
+        setVisible(false);
+        rumah.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -124,7 +124,10 @@ public class HomeBaseGUI extends javax.swing.JFrame {
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
         // TODO add your handling code here:
-        ((HomeBase)(dunia)).bukaChestMonster(player, dunia);
+        // ((HomeBase)(dunia)).bukaChestMonster(player, dunia);
+        ChestItemPokemonGUI chestItemPokemonGUI = new ChestItemPokemonGUI(dunia, player);
+        chestItemPokemonGUI.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed

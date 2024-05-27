@@ -4,6 +4,11 @@
  */
 package com.mycompany.pokemonneatbens;
 
+import java.awt.Color;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author aditya wirz
@@ -23,7 +28,24 @@ public class ChestItemPokemonGUI extends javax.swing.JFrame {
         initComponents();
         this.dunia = dunia;
         this.player = player;
-     
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        jLabel2.setForeground(Color.WHITE);
+        jLabel3.setForeground(Color.WHITE);
+        jLabel4.setForeground(Color.WHITE);
+        jLabel2.setText(player.playerMonster.get(0).name);
+        if(player.playerMonster.size() >= 2){
+            jLabel3.setText(player.playerMonster.get(1).name);
+        }
+        if(player.playerMonster.size() >= 3){
+            jLabel4.setText(player.playerMonster.get(2).name);
+        }
+        for(int i = 0; i < this.dunia.monsterChest.size(); i++){
+            String nama = this.dunia.monsterChest.get(i).name;
+            int level = this.dunia.monsterChest.get(i).level;
+            Element element = this.dunia.monsterChest.get(i).element;
+            Object data[] = {i,nama, element, level};
+            model.addRow(data);
+        }
     }
 
     /**
@@ -38,8 +60,13 @@ public class ChestItemPokemonGUI extends javax.swing.JFrame {
         ToUsserIn7 = new javax.swing.JButton();
         ToUsserIn8 = new javax.swing.JButton();
         ToUsserIn9 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         ToUsserIn10 = new javax.swing.JButton();
         ToUsserIn11 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -71,6 +98,22 @@ public class ChestItemPokemonGUI extends javax.swing.JFrame {
         });
         getContentPane().add(ToUsserIn9, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 870, 350, 90));
 
+        jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 730, 160, 40));
+
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 730, 160, 40));
+
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 730, 160, 40));
+
+        jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
+        jLabel5.setText("Pilih Index:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 670, -1, -1));
+
         ToUsserIn10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemWaktuPerang/1.png"))); // NOI18N
         ToUsserIn10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,20 +130,25 @@ public class ChestItemPokemonGUI extends javax.swing.JFrame {
         });
         getContentPane().add(ToUsserIn11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 770, 290, 70));
 
+        jTextField1.setToolTipText("");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 660, 180, 40));
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Nama", "Element", "Level"
+                "No", "Nama", "Element", "Level"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 720, 590));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 710, 540));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemWaktuPerang/NEW GAME (2).png"))); // NOI18N
@@ -111,26 +159,114 @@ public class ChestItemPokemonGUI extends javax.swing.JFrame {
 
     private void ToUsserIn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn7ActionPerformed
         // TODO add your handling code here:
-        HomeBaseGUI rumah = new HomeBaseGUI(dunia, player);
-        setVisible(false);
-        rumah.setVisible(true);
+        // Pokemon3
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        int index = Integer.parseInt(jTextField1.getText());
+        if(player.playerMonster.size() < 3){
+            player.playerMonster.add(dunia.monsterChest.get(index));
+            dunia.monsterChest.remove(index);
+        }else{
+            player.playerMonster.add(2, dunia.monsterChest.get(index));
+            dunia.monsterChest.remove(index);
+            dunia.monsterChest.add(player.playerMonster.get(3));
+            player.playerMonster.remove(3);
+        }
+        jLabel2.setText(player.playerMonster.get(0).name);
+        if(player.playerMonster.size() >= 2){
+            jLabel3.setText(player.playerMonster.get(1).name);
+        }
+        if(player.playerMonster.size() >= 3){
+            jLabel4.setText(player.playerMonster.get(2).name);
+        }
+        for(int i = 0; i < this.dunia.monsterChest.size(); i++){
+            String nama = this.dunia.monsterChest.get(i).name;
+            int level = this.dunia.monsterChest.get(i).level;
+            Element element = this.dunia.monsterChest.get(i).element;
+            Object data[] = {i,nama, element, level};
+            model.addRow(data);
+        }
     }//GEN-LAST:event_ToUsserIn7ActionPerformed
 
     private void ToUsserIn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn8ActionPerformed
         // TODO add your handling code here:
+        HomeBaseGUI rumah = new HomeBaseGUI(dunia, player);
+        setVisible(false);
+        rumah.setVisible(true);
     }//GEN-LAST:event_ToUsserIn8ActionPerformed
 
     private void ToUsserIn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn9ActionPerformed
         // TODO add your handling code here:
+        ChestItemViewGUI view = new ChestItemViewGUI(dunia, player);
+        setVisible(false);
+        view.setVisible(true);
     }//GEN-LAST:event_ToUsserIn9ActionPerformed
 
     private void ToUsserIn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn10ActionPerformed
         // TODO add your handling code here:
+        // Pokemon1
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        int index = Integer.parseInt(jTextField1.getText());
+        if(player.playerMonster.size() < 3){
+            player.playerMonster.add(dunia.monsterChest.get(index));
+            dunia.monsterChest.remove(index);
+        }else{
+            player.playerMonster.add(0, dunia.monsterChest.get(index));
+            dunia.monsterChest.remove(index);
+            dunia.monsterChest.add(player.playerMonster.get(1));
+            player.playerMonster.remove(1);
+        }
+        jLabel2.setText(player.playerMonster.get(0).name);
+        if(player.playerMonster.size() >= 2){
+            jLabel3.setText(player.playerMonster.get(1).name);
+        }
+        if(player.playerMonster.size() >= 3){
+            jLabel4.setText(player.playerMonster.get(2).name);
+        }
+        for(int i = 0; i < this.dunia.monsterChest.size(); i++){
+            String nama = this.dunia.monsterChest.get(i).name;
+            int level = this.dunia.monsterChest.get(i).level;
+            Element element = this.dunia.monsterChest.get(i).element;
+            Object data[] = {i,nama, element, level};
+            model.addRow(data);
+        }
     }//GEN-LAST:event_ToUsserIn10ActionPerformed
 
     private void ToUsserIn11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn11ActionPerformed
         // TODO add your handling code here:
+        // Pokemon2
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        int index = Integer.parseInt(jTextField1.getText());
+        if(player.playerMonster.size() < 3){
+            player.playerMonster.add(dunia.monsterChest.get(index));
+            dunia.monsterChest.remove(index);
+        }else{
+            player.playerMonster.add(1, dunia.monsterChest.get(index));
+            dunia.monsterChest.remove(index);
+            dunia.monsterChest.add(player.playerMonster.get(2));
+            player.playerMonster.remove(2);
+        }
+        jLabel2.setText(player.playerMonster.get(0).name);
+        if(player.playerMonster.size() >= 2){
+            jLabel3.setText(player.playerMonster.get(1).name);
+        }
+        if(player.playerMonster.size() >= 3){
+            jLabel4.setText(player.playerMonster.get(2).name);
+        }
+        for(int i = 0; i < this.dunia.monsterChest.size(); i++){
+            String nama = this.dunia.monsterChest.get(i).name;
+            int level = this.dunia.monsterChest.get(i).level;
+            Element element = this.dunia.monsterChest.get(i).element;
+            Object data[] = {i,nama, element, level};
+            model.addRow(data);
+        }
     }//GEN-LAST:event_ToUsserIn11ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,7 +312,12 @@ public class ChestItemPokemonGUI extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn8;
     private javax.swing.JButton ToUsserIn9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

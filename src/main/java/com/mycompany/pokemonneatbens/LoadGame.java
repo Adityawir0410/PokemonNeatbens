@@ -111,8 +111,9 @@ public class LoadGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ToUsserInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserInActionPerformed
-        UsserInterface lobby = new UsserInterface();
-        lobby.setVisible(true);
+        TempatWar war = new TempatWar(player,dunia,index);
+        war.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_ToUsserInActionPerformed
 
     private void ToUsserIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn1ActionPerformed
@@ -123,22 +124,31 @@ public class LoadGame extends javax.swing.JFrame {
         }
 
         if (wild.ketangkap) {
-            //muncul
+            dunia.monsterChest.add(wild);
+            BerhasilTangkapMonsterGui tangkap = new BerhasilTangkapMonsterGui(dunia, player);
+            setVisible(false);
+            tangkap.setVisible(true);
         }
     }//GEN-LAST:event_ToUsserIn1ActionPerformed
 
     private void ToUsserIn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn2ActionPerformed
-        // TODO add your handling code here:
+        TempatWar war = new TempatWar(player,dunia,index);
+        setVisible(false);
+        war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn2ActionPerformed
 
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
         TempatWar war = new TempatWar(player,dunia,index);
         if (player.health.size() != 0) {
             monster.hp += 100;
+            if (monster.hp > monster.maxHp) {
+                monster.hp = monster.maxHp;
+            }
             player.health.remove(0);
-            setVisible(false);
-            war.setVisible(true);
         }
+        System.out.println("Berhasil menggunakan health");
+        setVisible(false);
+        war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
