@@ -8,12 +8,12 @@ package com.mycompany.pokemonneatbens;
  *
  * @author aditya wirz
  */
-public class LoadGame extends javax.swing.JFrame {
+public class EvolveGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form UsserInterface
      */
-    public LoadGame() {
+    public EvolveGUI() {
         initComponents();
     }
 
@@ -26,58 +26,67 @@ public class LoadGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ToUsserIn3 = new javax.swing.JButton();
-        ToUsserIn2 = new javax.swing.JButton();
-        ToUsserIn1 = new javax.swing.JButton();
         ToUsserIn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        ToUsserIn1 = new javax.swing.JButton();
+        ToUsserIn2 = new javax.swing.JButton();
+        ToUsserIn3 = new javax.swing.JButton();
         ToUsserIn4 = new javax.swing.JButton();
+        ToUsserIn5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ToUsserIn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemDungeon/1.png"))); // NOI18N
-        ToUsserIn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 310, 70));
-
-        ToUsserIn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemDungeon/1.png"))); // NOI18N
-        ToUsserIn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 310, 70));
-
-        ToUsserIn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemDungeon/1.png"))); // NOI18N
-        ToUsserIn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToUsserIn1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ToUsserIn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 660, 310, 70));
-
-        ToUsserIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/MenuBack.png"))); // NOI18N
+        ToUsserIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/Item.png"))); // NOI18N
         ToUsserIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToUsserInActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 890, 170, 80));
+        getContentPane().add(ToUsserIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 560, 280, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemDungeon/19.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
+        ToUsserIn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/Back.png"))); // NOI18N
+        ToUsserIn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToUsserIn1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ToUsserIn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 870, 350, 90));
 
-        ToUsserIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemDungeon/1.png"))); // NOI18N
+        ToUsserIn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/1.png"))); // NOI18N
+        ToUsserIn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToUsserIn2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ToUsserIn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, 280, 60));
+
+        ToUsserIn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/1.png"))); // NOI18N
+        ToUsserIn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToUsserIn3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ToUsserIn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 280, 60));
+
+        ToUsserIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/1.png"))); // NOI18N
         ToUsserIn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToUsserIn4ActionPerformed(evt);
             }
         });
-        getContentPane().add(ToUsserIn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 310, 70));
+        getContentPane().add(ToUsserIn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 280, 60));
+
+        ToUsserIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/Item.png"))); // NOI18N
+        ToUsserIn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToUsserIn5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ToUsserIn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, 280, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/Evolve/41.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -103,6 +112,10 @@ public class LoadGame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
+    private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ToUsserIn5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -120,22 +133,22 @@ public class LoadGame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoadGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EvolveGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoadGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EvolveGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoadGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EvolveGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoadGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EvolveGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        LoadGame Interface = new LoadGame();
+        EvolveGUI Interface = new EvolveGUI();
         
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoadGame().setVisible(true);
+                new EvolveGUI().setVisible(true);
             }
         });
     }
@@ -146,6 +159,7 @@ public class LoadGame extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn2;
     private javax.swing.JButton ToUsserIn3;
     private javax.swing.JButton ToUsserIn4;
+    private javax.swing.JButton ToUsserIn5;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

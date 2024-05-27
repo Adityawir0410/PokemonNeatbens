@@ -31,61 +31,85 @@ public class IsiNamaGui extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        toLoadGame = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/4.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/IsiNama/NEW GAME (2).png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 890, 460, 110));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 790, 350, 80));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/2.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/IsiNama/Start.png"))); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 640, 460, 110));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 790, 350, 80));
 
-        toLoadGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/3.png"))); // NOI18N
-        toLoadGame.addActionListener(new java.awt.event.ActionListener() {
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/New folder/1.png"))); // NOI18N
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toLoadGameActionPerformed(evt);
+                jButton9ActionPerformed(evt);
             }
         });
-        getContentPane().add(toLoadGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 760, 460, 110));
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 550, 350, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/LobbyMain.png"))); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/New folder/3.png"))); // NOI18N
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 670, 350, 80));
+
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/New folder/1.png"))); // NOI18N
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 350, 80));
+
+        jTextField1.setText("jTextField1");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 340, 70));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/IsiNama/_d5c0ef46-65ee-4203-80fd-e1ad2ae962d7.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1000));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void toLoadGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toLoadGameActionPerformed
-        GameManager loadGame = new GameManager();
-        player = loadGame.loadProgress();
-        setVisible(false);
-    // TODO add your handling code here:
-    }//GEN-LAST:event_toLoadGameActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        GameManager newGame = new GameManager();
-        newGame.StartNewGame();
-        setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         System.exit(0);
         //gacor gacor
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,9 +149,12 @@ public class IsiNamaGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton toLoadGame;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
