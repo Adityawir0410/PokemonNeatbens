@@ -38,7 +38,7 @@ public class TempatWar extends javax.swing.JFrame {
         initComponents();
         this.player = player;
         this.dunia = dunia;
-        this.monsterPlayer = index;
+        this.monsterPlayer = index; 
         this.wildMonster = ((Dungeon)(dunia)).generateWildMonsters(player);
         jLabel4.setText(Integer.toString(player.playerMonster.get(index).hp));
         jLabel5.setText(Integer.toString(wildMonster.hp));
