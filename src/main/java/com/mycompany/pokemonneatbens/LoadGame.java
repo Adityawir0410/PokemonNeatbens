@@ -26,6 +26,9 @@ public class LoadGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         ToUsserIn3 = new javax.swing.JButton();
         ToUsserIn2 = new javax.swing.JButton();
         ToUsserIn1 = new javax.swing.JButton();
@@ -35,6 +38,18 @@ public class LoadGame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel3.setText("jLabel2");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 270, 50));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 270, 50));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel4.setText("jLabel2");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 600, 270, 50));
 
         ToUsserIn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/ItemDungeon/1.png"))); // NOI18N
         ToUsserIn3.addActionListener(new java.awt.event.ActionListener() {
@@ -147,5 +162,8 @@ public class LoadGame extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn3;
     private javax.swing.JButton ToUsserIn4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
