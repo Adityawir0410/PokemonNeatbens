@@ -1,13 +1,11 @@
-Player Name: afsd1
+Player Name: budi
 Player Money: 0
 
 Health Potions: 0
-Courage Potions: 0
-Okeball: 4
+Courage Potions: 2
+Okeball: 1
 
 Player Monster: 
-Monster Megali 1 100 100 100 WIND true false
-Monster Anemos 1 100 100 100 WIND false false
-Monster Anemos 1 100 100 100 WIND false false
+Monster Megali 1 100 0 100 FIRE false false
 
 List: 
