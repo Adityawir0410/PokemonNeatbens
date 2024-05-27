@@ -90,7 +90,6 @@ public class HomeBase extends Dunia{
             monster = player.playerMonster.get(2);
             index = 2;
             break;
-       
         default:
             break;
        }
@@ -113,7 +112,7 @@ public class HomeBase extends Dunia{
                             player.playerMonster.remove(index + 1);
                             break;
                         default:
-                            sc.close();
+                        System.out.println("Invalid Input");
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
@@ -131,8 +130,8 @@ public class HomeBase extends Dunia{
                             player.playerMonster.remove(index + 1);
                             break;
                         default:
-                            sc.close();
-                            throw new InvalidEvolutionException("Invalid Elemen");
+                            System.out.println("Invalid Input");
+                        throw new InvalidEvolutionException("Invalid Elemen");    
                     }
                     break;
                 case WATER:
@@ -149,7 +148,7 @@ public class HomeBase extends Dunia{
                             player.playerMonster.remove(index + 1);
                             break;
                         default:
-                        sc.close();
+                        System.out.println("Invalid Input");
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
@@ -167,7 +166,7 @@ public class HomeBase extends Dunia{
                             player.playerMonster.remove(index + 1);
                         break;
                         default:
-                        sc.close();
+                        System.out.println("Invalid Input");
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
@@ -185,7 +184,7 @@ public class HomeBase extends Dunia{
                             player.playerMonster.remove(index + 1);
                         break;
                         default:
-                        sc.close();
+                        System.out.println("Invalid Input");
                             throw new InvalidEvolutionException("Invalid Elemen");
                     }
                     break;
