@@ -57,7 +57,7 @@ public class IsiNamaGui extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 790, 350, 80));
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/New folder/1.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SRC/New folder/2.png"))); // NOI18N
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
