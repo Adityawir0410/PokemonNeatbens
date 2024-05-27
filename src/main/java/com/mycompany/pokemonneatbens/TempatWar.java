@@ -302,7 +302,10 @@ public class TempatWar extends javax.swing.JFrame {
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
-        TempatWar war = new TempatWar();
+        Monster monster = player.playerMonster.get(monsterPlayer);
+        LoadGame game = new LoadGame(player,monster,dunia,monsterPlayer,wildMonster);
+        game.setVisible(true);
+        setVisible(false);
         
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 

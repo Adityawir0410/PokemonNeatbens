@@ -9,11 +9,17 @@ package com.mycompany.pokemonneatbens;
  * @author aditya wirz
  */
 public class BerhasilTangkapMonsterGui extends javax.swing.JFrame {
-
+    public Dunia dunia;
+    public Player player;
     /**
      * Creates new form UsserInterface
      */
     public BerhasilTangkapMonsterGui() {
+        initComponents();
+    }
+    public BerhasilTangkapMonsterGui(Dunia dunia, Player player) {
+        this.player = player;
+        this.dunia = dunia;
         initComponents();
     }
 
@@ -47,7 +53,9 @@ public class BerhasilTangkapMonsterGui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ToUsserIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn1ActionPerformed
-        // TODO add your handling code here:
+        DungeonGUI dungeon = new DungeonGUI(dunia,player);
+        setVisible(false);
+        dungeon.setVisible(true);
     }//GEN-LAST:event_ToUsserIn1ActionPerformed
 
     /**
