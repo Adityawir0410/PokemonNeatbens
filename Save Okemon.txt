@@ -1,4 +1,4 @@
-Player Name: BUDI
+Player Name: Mariadi
 Player Money: 40
 
 Health Potions: 0
