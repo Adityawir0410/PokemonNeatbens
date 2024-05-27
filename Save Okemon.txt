@@ -6,7 +6,8 @@ Courage Potions: 0
 Okeball: 4
 
 Player Monster: 
-Monster Megali 1 100 88 100 FIRE false false
+Monster Megali 1 100 100 100 WIND true false
+Monster Anemos 1 100 100 100 WIND false false
+Monster Agoni 2 125 125 100 EARTH false false
 
-Monster Chest List: 
-Monster Chest Anemos 1 100 85 100 WIND false false
+List: 

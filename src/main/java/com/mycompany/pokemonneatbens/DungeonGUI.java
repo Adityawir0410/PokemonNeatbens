@@ -99,7 +99,8 @@ public class DungeonGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
-        // TODO add your handling code here:
+        GameManager gm = new GameManager();
+        gm.saveProgress(player, dunia);
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
