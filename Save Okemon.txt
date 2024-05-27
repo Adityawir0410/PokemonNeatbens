@@ -1,4 +1,4 @@
-Player Name: BUDI SETIAWAN
+Player Name: adaw
 Player Money: 100
 
 Health Potions: 0
@@ -6,6 +6,6 @@ Courage Potions: 0
 Okeball: 0
 
 Player Monster: 
-Monster Anemos 1 100 60 100 WIND false false
+Monster Megali 1 100 100 100 WIND true false
 
 List: 

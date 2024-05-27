@@ -138,6 +138,8 @@ public class HomeBaseGUI extends javax.swing.JFrame {
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
         EvolveGUI evolve = new EvolveGUI(player,dunia);
+        evolve.dunia = dunia;
+        evolve.player = player;
         setVisible(false);
         evolve.setVisible(true);
 

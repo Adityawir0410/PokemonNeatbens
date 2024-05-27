@@ -25,8 +25,8 @@ public class EvolveGUI extends javax.swing.JFrame {
     
     public EvolveGUI(Player player, Dunia dunia) {
         this.player = player;
-        this.dunia = dunia;
         initComponents();
+        this.dunia = dunia;
     }
 
     /**
@@ -170,32 +170,32 @@ public class EvolveGUI extends javax.swing.JFrame {
                     case FIRE:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("ANGIN");
-                        jLabel7.setText("TANAH");
+                        jLabel6.setText("WIND");
+                        jLabel7.setText("EARTH");
                         break;
                     case WATER:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("ANGIN");
-                        jLabel7.setText("ES");
+                        jLabel6.setText("WIND");
+                        jLabel7.setText("ICE");
                         break;
                     case WIND:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("API");
-                        jLabel7.setText("AIR");
+                        jLabel6.setText("FIRE");
+                        jLabel7.setText("WATER");
                         break;
                     case ICE:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("TANAH");
-                        jLabel7.setText("AIR");
+                        jLabel6.setText("EARTH");
+                        jLabel7.setText("WATER");
                         break;
                     case EARTH:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("API");
-                        jLabel7.setText("ES");
+                        jLabel6.setText("FIRE");
+                        jLabel7.setText("ICE");
                         break;
                     default:
                         break;
@@ -216,32 +216,32 @@ public class EvolveGUI extends javax.swing.JFrame {
                 case FIRE:
                     ToUsserIn5.setVisible(true);
                     ToUsserIn6.setVisible(true);
-                    jLabel6.setText("ANGIN");
-                    jLabel7.setText("TANAH");
+                    jLabel6.setText("WIND");
+                    jLabel7.setText("EARTH");
                     break;
                 case WATER:
                     ToUsserIn5.setVisible(true);
                     ToUsserIn6.setVisible(true);
-                    jLabel6.setText("ANGIN");
-                    jLabel7.setText("ES");
+                    jLabel6.setText("WIND");
+                    jLabel7.setText("ICE");
                     break;
                 case WIND:
                     ToUsserIn5.setVisible(true);
                     ToUsserIn6.setVisible(true);
-                    jLabel6.setText("API");
-                    jLabel7.setText("AIR");
+                    jLabel6.setText("FIRE");
+                    jLabel7.setText("WATER");
                     break;
                 case ICE:
                     ToUsserIn5.setVisible(true);
                     ToUsserIn6.setVisible(true);
-                    jLabel6.setText("TANAH");
-                    jLabel7.setText("AIR");
+                    jLabel6.setText("EARTH");
+                    jLabel7.setText("WATER");
                     break;
                 case EARTH:
                     ToUsserIn5.setVisible(true);
                     ToUsserIn6.setVisible(true);
-                    jLabel6.setText("API");
-                    jLabel7.setText("ES");
+                    jLabel6.setText("FIRE");
+                    jLabel7.setText("ICE");
                     break;
                 default:
                     break;
@@ -261,32 +261,32 @@ public class EvolveGUI extends javax.swing.JFrame {
                     case FIRE:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("ANGIN");
-                        jLabel7.setText("TANAH");
+                        jLabel6.setText("WIND");
+                        jLabel7.setText("EARTH");
                         break;
                     case WATER:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("ANGIN");
-                        jLabel7.setText("ES");
+                        jLabel6.setText("WIND");
+                        jLabel7.setText("ICE");
                         break;
                     case WIND:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("API");
-                        jLabel7.setText("AIR");
+                        jLabel6.setText("FIRE");
+                        jLabel7.setText("WATER");
                         break;
                     case ICE:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("TANAH");
-                        jLabel7.setText("AIR");
+                        jLabel6.setText("EARTH");
+                        jLabel7.setText("WATER");
                         break;
                     case EARTH:
                         ToUsserIn5.setVisible(true);
                         ToUsserIn6.setVisible(true);
-                        jLabel6.setText("API");
-                        jLabel7.setText("ES");
+                        jLabel6.setText("FIRE");
+                        jLabel7.setText("ICE");
                         break;
                     default:
                         break;
@@ -299,54 +299,68 @@ public class EvolveGUI extends javax.swing.JFrame {
 
     private void ToUsserIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn5ActionPerformed
         int index = player.playerMonster.indexOf(monster);
-        switch (jLabel6.getText()) {
-            case "FIRE":
-                monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            case "WIND":
-                monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            case "WATER":
-                monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            case "ICE":
-                monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            case "EARTH":
-                monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            default:
-                break;
+        if (monster.evolved) {
+            jLabel4.setText("MONSTER SUDAH EVOLVE DI LEVEL INI");
+        }else{
+            switch (jLabel6.getText()) {
+                case "FIRE":
+                    monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                case "WIND":
+                    monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                case "WATER":
+                    monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                case "ICE":
+                    monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                case "EARTH":
+                    monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                default:
+                    jLabel4.setText("Error");
+                    break;
+            }
+            monster.evolved = true;
+            player.playerMonster.add(index, monster);
+            player.playerMonster.remove(index + 1);
+            jLabel4.setText("BERHASIL EVOLVE!");
+
         }
-        player.playerMonster.add(index, monster);
-        player.playerMonster.remove(index + 1);
-        jLabel4.setText("BERHASIL EVOLVE!");
     }//GEN-LAST:event_ToUsserIn5ActionPerformed
 
     private void ToUsserIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn6ActionPerformed
         int index = player.playerMonster.indexOf(monster);
-        switch (jLabel7.getText()) {
-            case "FIRE":
-                monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            case "WIND":
-                monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            case "WATER":
-                monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            case "ICE":
-                monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            case "EARTH":
-                monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
-                break;
-            default:
-                break;
+        if (monster.evolved) {
+            jLabel4.setText("MONSTER SUDAH EVOLVE DI LEVEL INI");
+        }else{
+            switch (jLabel6.getText()) {
+                case "FIRE":
+                    monster = new FireMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                case "WIND":
+                    monster = new WindMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                case "WATER":
+                    monster = new WaterMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                case "ICE":
+                    monster = new IceMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                case "EARTH":
+                    monster = new EarthMonster(monster.name, monster.level, monster.maxHp, monster.hp, monster.ep);
+                    break;
+                default:
+                    jLabel4.setText("Error");
+                    break;
+            }
+            monster.evolved = true;
+            player.playerMonster.add(index, monster);
+            player.playerMonster.remove(index + 1);
+            jLabel4.setText("BERHASIL EVOLVE!");
+
         }
-        player.playerMonster.add(index, monster);
-        player.playerMonster.remove(index + 1);
-        jLabel4.setText("BERHASIL EVOLVE!");
 
     }//GEN-LAST:event_ToUsserIn6ActionPerformed
 
