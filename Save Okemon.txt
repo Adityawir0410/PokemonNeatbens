@@ -1,11 +1,11 @@
-Player Name: budi
-Player Money: 0
+Player Name: BUDI SETIAWAN
+Player Money: 100
 
 Health Potions: 0
-Courage Potions: 2
-Okeball: 1
+Courage Potions: 0
+Okeball: 0
 
 Player Monster: 
-Monster Megali 1 100 0 100 FIRE false false
+Monster Anemos 1 100 60 100 WIND false false
 
 List: 
