@@ -302,16 +302,7 @@ public class TempatWar extends javax.swing.JFrame {
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
-        // TODO add your handling code here:
-        boolean tangkap = ((Dungeon)(dunia)).playerUseItem(player, wildMonster, monsterPlayer, dunia);
-        System.out.println(dunia.monsterChest.size());
-        DungeonGUI dungeon = new DungeonGUI(dunia, player);
-        jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
-        jLabel5.setText(Integer.toString(wildMonster.hp));
-        if(tangkap){
-            dungeon.setVisible(true);
-            setVisible(false);
-        }
+        TempatWar war = new TempatWar();
         
     }//GEN-LAST:event_ToUsserIn4ActionPerformed
 
