@@ -149,6 +149,7 @@ public class TempatWar extends javax.swing.JFrame {
         ToUsserIn4 = new javax.swing.JButton();
         ToUsserIn5 = new javax.swing.JButton();
         ToUsserIn6 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -200,6 +201,14 @@ public class TempatWar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ToUsserIn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 820, 300, 70));
+
+        jButton1.setText("Refresh");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 940, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 720, 570, -1));
@@ -375,6 +384,12 @@ public class TempatWar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ToUsserIn6ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        jLabel4.setText(Integer.toString(player.playerMonster.get(monsterPlayer).hp));
+        jLabel5.setText(Integer.toString(wildMonster.hp));
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -418,6 +433,7 @@ public class TempatWar extends javax.swing.JFrame {
     private javax.swing.JButton ToUsserIn4;
     private javax.swing.JButton ToUsserIn5;
     private javax.swing.JButton ToUsserIn6;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

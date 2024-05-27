@@ -144,6 +144,7 @@ public class LoadGame extends javax.swing.JFrame {
             }
             player.health.remove(0);
         }
+
         System.out.println("Berhasil menggunakan health");
         setVisible(false);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed

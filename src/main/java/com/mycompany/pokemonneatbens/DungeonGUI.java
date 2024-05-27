@@ -92,10 +92,9 @@ public class DungeonGUI extends javax.swing.JFrame {
     private void ToUsserIn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn3ActionPerformed
         // TODO add your handling code here:
         //Searching
-        int pilihanMonster = ((Dungeon)(dunia)).startBattle(player);
-        TempatWar war = new TempatWar(player, dunia, pilihanMonster);
+        PilihPokemonGUI a = new PilihPokemonGUI(dunia, player);
+        a.setVisible(true);
         setVisible(false);
-        war.setVisible(true);
     }//GEN-LAST:event_ToUsserIn3ActionPerformed
 
     private void ToUsserIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserIn4ActionPerformed
