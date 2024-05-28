@@ -117,7 +117,6 @@ public class EvolveGUI extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        nama = player.playerMonster.get(0).name;
         if (player.playerMonster.size() > 2) {
             nama = player.playerMonster.get(2).name;
             jLabel3.setText(nama);
@@ -133,6 +132,7 @@ public class EvolveGUI extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        nama = player.playerMonster.get(0).name;
         jLabel5.setText(nama);
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 140, 50));
 
