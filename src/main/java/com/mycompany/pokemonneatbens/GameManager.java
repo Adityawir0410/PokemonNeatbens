@@ -103,7 +103,7 @@ public class GameManager {
                         case "ICE":
                             monster = new IceMonster(nama, level, maxHp, hp, ep);
                             break;
-                        case "Earth":
+                        case "EARTH":
                             monster = new EarthMonster(nama, level, maxHp, hp, ep);
                             break;
                         default:

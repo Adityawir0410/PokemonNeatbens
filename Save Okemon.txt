@@ -1,13 +1,11 @@
-Player Name: Mariadi
-Player Money: 40
+Player Name: b
+Player Money: 100
 
 Health Potions: 0
 Courage Potions: 0
-Okeball: 2
+Okeball: 0
 
 Player Monster: 
-Monster Anemos 1 100 100 100 WIND false false
-Monster Pagomenos 1 100 100 100 ICE false false
-Monster Pagomenos 1 100 100 100 ICE false false
+Monster Anemos 1 100 100 100 FIRE true false
 
 List: 
