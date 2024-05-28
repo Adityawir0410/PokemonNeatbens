@@ -111,8 +111,6 @@ public class LoadGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ToUsserInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUsserInActionPerformed
-        TempatWar war = new TempatWar(player,dunia,index);
-        war.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_ToUsserInActionPerformed
 
